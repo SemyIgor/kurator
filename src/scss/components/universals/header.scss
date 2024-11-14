@@ -119,6 +119,7 @@
 
 .burger {
     display: none;
+    width: 27px;
 
     img {
         width: 100%;
@@ -173,9 +174,21 @@
             padding-right: 20px;
         }
     }
+
+    .logo {
+        & img {
+            width: calc(160px + (220 - 160) * ((100vw - 360px) / (767 - 360)));
+        }
+    }
 }
 
 @media(max-width: 619px) {
+    .header {
+        padding-top: 0;
+        padding-bottom: 0;
+        display: flex;
+        height: calc(40px + (67 - 40) * ((100vw - 360px) / (767 - 360)));
+    }
 
     .header__container {
         grid-template-columns: 1fr 34px;
@@ -183,7 +196,7 @@
         column-gap: 0;
 
         .logo {
-            justify-self: start;
+            justify-self: center;
         }
     }
 

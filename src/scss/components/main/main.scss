@@ -47,6 +47,45 @@
     }
 }
 
+.work-card {
+    height: fit-content;
+    padding-top: 93px;
+    padding-right: 0;
+    padding-bottom: 33px;
+    display: flex;
+    padding-left: var(--padding-60-30);
+    background-color: var(--color-card-bg);
+
+    & .info {
+        display: flex;
+        flex-direction: column;
+        /* align-items: start; */
+    }
+
+    & .title {
+        max-width: 315px;
+        font-size: var(--font-size-48-22);
+        font-weight: 400;
+        text-transform: uppercase;
+        color: var(--color-black-title);
+        margin-bottom: 10px;
+    }
+
+    & .line {
+        width: 200px;
+        border: 2px solid var(--color-decorated-text);
+        margin-bottom: 27px;
+    }
+
+    .text {
+        flex-grow: 2;
+        font-size: var(--font-size-20-14);
+        font-weight: 400;
+        line-height: 120%;
+        color: var(--color-black-text);
+    }
+}
+
 /* До поры скрываем альтернативную надпись на кнопках */
 [class*='-btn'] span:last-child {
     display: none;
@@ -118,6 +157,7 @@
 
     &__container {
         width: 100%;
+        max-width: 700px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 30px;
@@ -175,46 +215,103 @@
         }
     }
 
-    & .right-column {
-        padding-top: 37px;
-        padding-right: 0;
-        padding-bottom: 33px;
-        padding-left: var(--padding-60-30);
-        background-color: var(--color-card-bg);
+    & .right-column {}
 
-        & .work-card {
-            display: flex;
-        }
-
-        & .info {
-            display: flex;
-            flex-direction: column;
-            /* align-items: start; */
-        }
-
-        & .title {
-            max-width: 315px;
-            font-size: var(--font-size-48-22);
-            font-weight: 400;
-            text-transform: uppercase;
-            color: var(--color-black-title);
-            margin-bottom: 10px;
-        }
-
+    & .work-card {
         & .line {
-            width: 200px;
-            border: 2px solid var(--color-decorated-text);
             margin-bottom: 50px;
         }
 
-        .text {
+        & .text {
             max-width: 556px;
-            font-size: var(--font-size-20-14);
-            font-weight: 400;
-            line-height: 120%;
-            color: var(--color-black-text);
             margin-bottom: 60px;
         }
+    }
+
+    & .image {
+        position: relative;
+        top: -40px;
+    }
+}
+
+.cards {
+    & .cards__container {
+        padding: 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+.two-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    & .work-card {
+        min-height: 335px;
+        padding: 20px 40px 53px;
+
+        & .title {
+            max-width: 100%;
+            font-size: var(--font-size-40-22);
+        }
+    }
+}
+
+.three-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+
+    & .work-card {
+        min-height: 383px;
+        padding: 47px 30px 30px;
+
+        & .title {
+            font-size: var(--font-size-40-22);
+            max-width: 100%;
+        }
+    }
+
+    & .bg-image {
+        background-image: url('../../../images/main/ok_boy.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+.four-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+
+    & .work-card {
+        min-height: 380px;
+        padding: 20px 30px 30px;
+
+        & .title {
+            font-size: var(--font-size-32-22);
+            max-width: 215px;
+        }
+    }
+
+    & .bg-image {
+        padding: 0;
+        background-color: transparent;
+
+        img {
+            max-width: none;
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    & .work-card__img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
 }
@@ -233,16 +330,36 @@
         & .red-border-btn span {
             font-size: calc(16px + (20 - 16) * ((100vw - 1199px) / (1919 - 1199)));
         }
+
+        & .work-card {
+            padding-top: calc(20px + (93 - 20) * ((100vw - 360px) / (1919 - 360)));
+        }
+    }
+}
+
+@media(max-width: 1675px) {
+    .four-cards {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+
+        & .bg-image {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            overflow: hidden;
+        }
     }
 }
 
 @media(max-width: 1199px) {
+
     .welcome {
         & .buttons {
             grid-template-columns: 1fr;
             gap: 20px;
         }
+    }
 
+    .buttons {
         & .red-btn span {
             font-size: 16px;
         }
@@ -251,6 +368,36 @@
             font-size: 16px;
         }
     }
+
+    .three-cards {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+
+        & .work-card {
+            min-height: 383px;
+            padding: 47px 30px 30px;
+
+            &:first-child {
+                grid-column: 1 / 2;
+                transform: translateX(calc(50% + 15px));
+            }
+
+            &:nth-child(2) {
+                grid-column: 1 / 2;
+            }
+        }
+    }
+
+    .four-cards {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+
+        /*         & .bg-image {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            overflow: hidden;
+        } */
+    }
 }
 
 @media(max-width: 849px) {
@@ -258,23 +405,123 @@
         &__container {
             grid-template-columns: 1fr;
         }
+
+        & .left-column {
+            padding-right: 20px;
+        }
+    }
+
+    .cards {
+        & .two-cards {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+    }
+
+    .two-cards {
+        & .work-card {
+            min-height: 285px;
+        }
+    }
+
+    .three-cards {
+        & .work-card {
+            min-height: 285px;
+
+            &:first-child {
+                grid-column: 1 / 3;
+                transform: translateX(0);
+            }
+
+            &:nth-child(2) {
+                grid-column: 1 / 3;
+                height: auto;
+            }
+
+            &:last-child {
+                grid-column: 1 / 3;
+                height: auto;
+            }
+        }
+
+        & .bg-image {
+            width: 360px;
+            justify-self: center;
+        }
+    }
+
+    .four-cards {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+
+        & .work-card {
+            min-height: 285px;
+
+            &:first-child {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+            }
+
+            &:nth-child(2) {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+
+            &:nth-child(3) {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+            }
+
+            &:last-child {
+                grid-column: 1 /2;
+                grid-row: 4 / 5;
+            }
+        }
     }
 }
 
 @media(max-width: 767px) {
+
+    .buttons {
+        grid-template-columns: 1fr 1fr;
+        gap: calc(10px + (30 - 10) * ((100vw - 360px) / (767 - 360)));
+        max-width: calc(290px + (530 - 290) * ((100vw - 360px) / (767 - 360)));
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .welcome,
+    .cards {
+        & .work-card {
+            padding: 20px;
+        }
+    }
+
+    .work-card {
+        & .title {
+            max-width: 210px;
+        }
+
+        & .line {
+            margin-bottom: calc(20px + (50 - 20) * ((100vw - 360px) / (767 - 360)));
+        }
+
+        & .text {
+            margin-bottom: calc(20px + (60 - 20) * ((100vw - 360px) / (767 - 360)));
+        }
+    }
+
     .welcome {
+        margin-bottom: 10px;
+
         &__container {
             padding: 0 0px;
             gap: 0px;
         }
 
-        & .left-column,
-        & .right-column {
-            padding: 0 20px;
-        }
-
         & .left-column {
-            /* padding-left: 0; */
+            padding: 0 20px;
+            /* padding-right: 20px; */
             padding-bottom: calc(21px + (63 - 21) * ((100vw - 360px) / (767 - 360)));
 
             & .title {
@@ -298,37 +545,73 @@
             }
         }
 
+
         & .right-column {
-            padding-top: 20px;
-            padding-bottom: 20px;
-
-            & .title {
-                max-width: 210px;
-            }
-
-            & .line {
-                margin-bottom: calc(20px + (50 - 20) * ((100vw - 360px) / (767 - 360)));
-            }
-
-            & .text {
-                margin-bottom: calc(20px + (60 - 20) * ((100vw - 360px) / (767 - 360)));
-            }
+            padding: 0px 0;
         }
 
         & .image {
             display: none;
         }
 
-        & .buttons {
-            grid-template-columns: 1fr 1fr;
-            gap: calc(10px + (30 - 10) * ((100vw - 360px) / (767 - 360)));
-            max-width: calc(290px + (530 - 290) * ((100vw - 360px) / (767 - 360)));
+        & .info {
             width: 100%;
-            margin: 0 auto;
 
+            & .text {}
+
+            & .line {
+                margin-bottom: calc(20px + (50 - 20) * ((100vw - 360px) / (767 - 360)));
+            }
+
+            & .text {
+                max-width: 100%;
+                margin-bottom: calc(20px + (60 - 20) * ((100vw - 360px) / (767 - 360)));
+            }
         }
 
+        & .work-card {
+            min-height: calc(255px + (285 - 255) * ((100vw - 360px) / (767 - 360)));
+        }
 
+        & .buttons {
+            grid-template-columns: 1fr 1fr;
+            width: 100%;
+        }
+    }
+
+    .cards {
+        & .cards__container {
+            gap: 10px;
+        }
+
+        & .two-cards,
+        & .three-cards,
+        & .four-cards {
+            gap: 10px;
+        }
+
+        & .bg-image {
+            padding: 0 20px;
+        }
+
+    }
+
+    .two-cards {
+        & .work-card {
+            min-height: calc(255px + (285 - 255) * ((100vw - 360px) / (767 - 360)));
+        }
+    }
+
+    .three-cards {
+        & .work-card {
+            min-height: calc(255px + (285 - 255) * ((100vw - 360px) / (767 - 360)));
+        }
+    }
+
+    .four-cards {
+        & .work-card {
+            min-height: calc(255px + (285 - 255) * ((100vw - 360px) / (767 - 360)));
+        }
     }
 
 }
