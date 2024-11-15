@@ -218,6 +218,7 @@ section {
   --color-gray-text: #929292;
   --color-white-text: #ffffff;
   --color-decorated-text: #7097B0;
+  --color-form-bg: #c8aab9;
   --color-red-bg: #EF172F;
   --color-red-text: #EF172F;
   --color-grey-txt: #b7b7b7;
@@ -227,6 +228,7 @@ section {
   --padding-60-30: 60px;
   /* Шрифты */
   --font-size-48-32: 48px;
+  --font-size-48-28: 48px;
   --font-size-48-22: 48px;
   --font-size-42-24: 42px;
   --font-size-40-22: 40px;
@@ -241,6 +243,7 @@ section {
 @media (max-width: 1919px) {
   :root {
     --font-size-48-32: calc(32px + (48 - 32) * ((100vw - 360px) / (1919 - 360)));
+    --font-size-48-28: calc(28px + (48 - 28) * ((100vw - 360px) / (1919 - 360)));
     --font-size-48-22: calc(22px + (48 - 22) * ((100vw - 360px) / (1919 - 360)));
     --font-size-42-24: calc(24px + (42 - 24) * ((100vw - 360px) / (1919 - 360)));
     --font-size-40-22: calc(22px + (40 - 22) * ((100vw - 360px) / (1919 - 360)));
@@ -280,7 +283,7 @@ section {
   border-radius: 25px;
 }
 .red-btn span {
-  font-size: 20px;
+  font-size: var(--font-size-20-16);
   font-weight: 500;
   color: var(--color-white-text);
 }
@@ -575,6 +578,222 @@ section {
   justify-content: center;
 }
 
+.question .question__container {
+  background-color: var(--color-form-bg);
+  padding-top: var(--padding-60-30);
+  padding-bottom: var(--padding-60-30);
+}
+.question .title {
+  font-size: var(--font-size-48-28);
+  font-weight: 700;
+  color: var(--color-white-text);
+  margin-bottom: 8px;
+}
+.question .line {
+  border: 2px solid var(--color-decorated-text);
+  width: 150px;
+  height: 0px;
+  margin-bottom: 30px;
+}
+.question .question-form {
+  display: grid;
+  grid-template-columns: 250px 250px 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.question .question-form input, .question .question-form textarea {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-black-text);
+}
+.question .question-form input::-webkit-input-placeholder, .question .question-form textarea::-webkit-input-placeholder {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-text);
+}
+.question .question-form input::-moz-placeholder, .question .question-form textarea::-moz-placeholder {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-text);
+}
+.question .question-form input:-ms-input-placeholder, .question .question-form textarea:-ms-input-placeholder {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-text);
+}
+.question .question-form input::-ms-input-placeholder, .question .question-form textarea::-ms-input-placeholder {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-text);
+}
+.question .question-form input::placeholder, .question .question-form textarea::placeholder {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-text);
+}
+.question .question-form input:focus::-webkit-input-placeholder, .question .question-form textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+.question .question-form input:focus::-moz-placeholder, .question .question-form textarea:focus::-moz-placeholder {
+  color: transparent;
+}
+.question .question-form input:focus:-ms-input-placeholder, .question .question-form textarea:focus:-ms-input-placeholder {
+  color: transparent;
+}
+.question .question-form input:focus::-ms-input-placeholder, .question .question-form textarea:focus::-ms-input-placeholder {
+  color: transparent;
+}
+.question .question-form input:focus::placeholder, .question .question-form textarea:focus::placeholder {
+  color: transparent;
+}
+.question .question-form textarea {
+  padding-top: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.question .question-form__name, .question .question-form__phone, .question .question-form__question {
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+}
+.question .form-result {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.question .remark {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-white-text);
+}
+.question .remark span {
+  /* font: 400 14px $font-family; */
+  color: #307ecc;
+}
+.question .red-btn.no-switch {
+  justify-self: end;
+  margin-bottom: 4px;
+}
+
+/* Медиа-запросы для QUESTION */
+@media (max-width: 992px) {
+  .question .question-form {
+    grid-template-columns: 250px 250px 1fr;
+    grid-template-rows: auto auto;
+  }
+  .question .question-form label:first-child {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .question .question-form label:last-child {
+    grid-column: 3/4;
+    grid-row: 1/2;
+  }
+  .question .question-form textarea {
+    grid-column: 1/4;
+    grid-row: 2/3;
+  }
+}
+@media (max-width: 767px) {
+  .question .question__container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .question .line {
+    margin-bottom: calc(20px + 10 * (100vw - 360px) / 407);
+  }
+  .question .question-form {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .question .question-form label:first-child {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 320px;
+  }
+  .question .question-form label:last-of-type {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 320px;
+  }
+  .question .question-form textarea {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    padding-top: calc(10px + 4 * (100vw - 360px) / 407);
+  }
+  .question .question-form input, .question .question-form textarea {
+    font-size: calc(14px + 2 * (100vw - 360px) / 407);
+  }
+  .question .question-form input::-webkit-input-placeholder, .question .question-form textarea::-webkit-input-placeholder {
+    font-size: calc(14px + 2 * (100vw - 360px) / 407);
+  }
+  .question .question-form input::-moz-placeholder, .question .question-form textarea::-moz-placeholder {
+    font-size: calc(14px + 2 * (100vw - 360px) / 407);
+  }
+  .question .question-form input:-ms-input-placeholder, .question .question-form textarea:-ms-input-placeholder {
+    font-size: calc(14px + 2 * (100vw - 360px) / 407);
+  }
+  .question .question-form input::-ms-input-placeholder, .question .question-form textarea::-ms-input-placeholder {
+    font-size: calc(14px + 2 * (100vw - 360px) / 407);
+  }
+  .question .question-form input::placeholder, .question .question-form textarea::placeholder {
+    font-size: calc(14px + 2 * (100vw - 360px) / 407);
+  }
+  .question .question-form input:focus::-webkit-input-placeholder, .question .question-form textarea:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+  .question .question-form input:focus::-moz-placeholder, .question .question-form textarea:focus::-moz-placeholder {
+    color: transparent;
+  }
+  .question .question-form input:focus:-ms-input-placeholder, .question .question-form textarea:focus:-ms-input-placeholder {
+    color: transparent;
+  }
+  .question .question-form input:focus::-ms-input-placeholder, .question .question-form textarea:focus::-ms-input-placeholder {
+    color: transparent;
+  }
+  .question .question-form input:focus::placeholder, .question .question-form textarea:focus::placeholder {
+    color: transparent;
+  }
+  .question .question-form__name, .question .question-form__phone, .question .question-form__question {
+    height: calc(40px + 10 * (100vw - 360px) / 407);
+  }
+  .question .form-result {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 30px;
+  }
+}
+/* ----------------------------- */
 /* Медиа-запросы для WELCOM */
 @media (max-width: 1919px) {
   .welcome .left-column {
@@ -923,8 +1142,10 @@ section {
   }
 }
 /* --------------------- */
-.footer .footer__container {
+.footer {
   background-color: var(--color-black-bg);
+}
+.footer .footer__container {
   padding-top: 60px;
   padding-bottom: 30px;
 }
@@ -1094,9 +1315,11 @@ section {
     margin-top: 30px;
   }
 }
+.header-nav {
+  background-color: var(--color-nav-bg);
+}
 .header-nav__container {
   height: 50px;
-  background-color: var(--color-nav-bg);
 }
 .header-nav ul {
   height: 100%;
