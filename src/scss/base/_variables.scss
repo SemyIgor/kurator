@@ -18,6 +18,8 @@
 
     --color-decorated-text: #7097B0;
 
+    --color-form-bg: #c8aab9;
+
     --color-red-bg: #EF172F;
     --color-red-text: #EF172F;
 
@@ -31,6 +33,7 @@
 
     /* Шрифты */
     --font-size-48-32: 48px;
+    --font-size-48-28: 48px;
     --font-size-48-22: 48px;
     --font-size-42-24: 42px;
     --font-size-40-22: 40px;
@@ -45,6 +48,7 @@
 @media(max-width: 1919px) {
     :root {
         --font-size-48-32: calc(32px + (48 - 32) * ((100vw - 360px) / (1919 - 360)));
+        --font-size-48-28: calc(28px + (48 - 28) * ((100vw - 360px) / (1919 - 360)));
         --font-size-48-22: calc(22px + (48 - 22) * ((100vw - 360px) / (1919 - 360)));
         --font-size-42-24: calc(24px + (42 - 24) * ((100vw - 360px) / (1919 - 360)));
         --font-size-40-22: calc(22px + (40 - 22) * ((100vw - 360px) / (1919 - 360)));

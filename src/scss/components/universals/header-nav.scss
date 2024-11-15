@@ -1,7 +1,8 @@
 .header-nav {
+    background-color: var(--color-nav-bg);
+
     &__container {
         height: 50px;
-        background-color: var(--color-nav-bg);
     }
 
     & ul {

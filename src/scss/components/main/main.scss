@@ -22,7 +22,7 @@
     border-radius: 25px;
 
     & span {
-        font-size: 20px;
+        font-size: var(--font-size-20-16);
         font-weight: 500;
         color: var(--color-white-text);
     }
@@ -315,6 +315,192 @@
     }
 
 }
+
+.question {
+    & .question__container {
+        background-color: var(--color-form-bg);
+        padding-top: var(--padding-60-30);
+        padding-bottom: var(--padding-60-30);
+    }
+
+    & .title {
+        font-size: var(--font-size-48-28);
+        font-weight: 700;
+        color: var(--color-white-text);
+        margin-bottom: 8px;
+    }
+
+    & .line {
+        border: 2px solid var(--color-decorated-text);
+        width: 150px;
+        height: 0px;
+        margin-bottom: 30px;
+
+    }
+
+    & .question-form {
+        display: grid;
+        grid-template-columns: 250px 250px 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+
+        & input,
+        & textarea {
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+            position: relative;
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--color-black-text);
+
+            &::placeholder {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 16px;
+                font-weight: 400;
+                color: var(--color-gray-text);
+            }
+
+            &:focus::placeholder {
+                color: transparent;
+            }
+        }
+
+        & textarea {
+            padding-top: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        &__name,
+        &__phone,
+        &__question {
+            width: 100%;
+            height: 50px;
+            border-radius: 8px;
+            border: none;
+        }
+    }
+
+    .form-result {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .remark {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--color-white-text);
+
+        & span {
+            /* font: 400 14px $font-family; */
+            color: #307ecc;
+        }
+    }
+
+    .red-btn.no-switch {
+        justify-self: end;
+        margin-bottom: 4px;
+    }
+
+}
+
+/* Медиа-запросы для QUESTION */
+@media(max-width: 992px) {
+
+    .question {
+        & .question-form {
+            grid-template-columns: 250px 250px 1fr;
+            grid-template-rows: auto auto;
+
+            & label:first-child {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+            }
+
+            & label:last-child {
+                grid-column: 3 / 4;
+                grid-row: 1 / 2;
+            }
+
+            & textarea {
+                grid-column: 1 / 4;
+                grid-row: 2 / 3;
+            }
+        }
+    }
+}
+
+@media(max-width: 767px) {
+    .question {
+        & .question__container {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        & .line {
+            margin-bottom: calc(20px + (30 - 20) * ((100vw - 360px) / (767 - 360)));
+        }
+
+        & .question-form {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto;
+            gap: 10px;
+            margin-bottom: 10px;
+
+            & label:first-child {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                width: 320px;
+            }
+
+            & label:last-of-type {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+                width: 320px;
+            }
+
+            & textarea {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+                padding-top: calc(10px + (14 - 10) * ((100vw - 360px) / (767 - 360)));
+            }
+
+            & input,
+            & textarea {
+                font-size: calc(14px + (16 - 14) * ((100vw - 360px) / (767 - 360)));
+
+                &::placeholder {
+                    font-size: calc(14px + (16 - 14) * ((100vw - 360px) / (767 - 360)));
+                }
+
+                &:focus::placeholder {
+                    color: transparent;
+                }
+            }
+
+            &__name,
+            &__phone,
+            &__question {
+                height: calc(40px + (50 - 40) * ((100vw - 360px) / (767 - 360)));
+            }
+        }
+
+
+
+        & .form-result {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto;
+            gap: 30px;
+
+            & .remark {}
+        }
+    }
+}
+
+/* ----------------------------- */
 
 /* Медиа-запросы для WELCOM */
 @media(max-width: 1919px) {

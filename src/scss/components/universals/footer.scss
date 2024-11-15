@@ -1,6 +1,7 @@
 .footer {
+    background-color: var(--color-black-bg);
+
     & .footer__container {
-        background-color: var(--color-black-bg);
         padding-top: 60px;
         padding-bottom: 30px;
     }
