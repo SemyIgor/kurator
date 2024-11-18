@@ -525,7 +525,7 @@
 }
 
 .advantages {
-    margin-bottom: 40px;
+    margin-bottom: var(--margin-40-30);
 
     & .advantages__container {
         display: grid;
@@ -568,6 +568,256 @@
         text-align: center;
     }
 }
+
+.do-now {
+    & .do-now__container {
+        background-color: var(--color-decorated-text);
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        padding: 43px 150px 0 200px;
+    }
+
+    .info {
+        padding-top: 37px;
+    }
+
+    .title {
+        font-size: var(--font-size-48-22);
+        font-weight: 700;
+        line-height: 120%;
+        max-width: 791px;
+        color: var(--color-white-text);
+        margin-bottom: 20px;
+    }
+
+    .line {
+
+        border: 1px solid var(--color-white-text);
+        background-color: var(--color-white-text);
+        width: 150px;
+        height: 3px;
+        margin-bottom: 40px;
+    }
+
+    .text {
+        font-size: var(--font-size-36-16);
+        font-weight: 400;
+        color: var(--color-white-text);
+        max-width: 725px;
+        margin-bottom: 60px;
+    }
+
+    .buttons {
+        margin-bottom: 60px;
+    }
+
+    .red-btn {
+        background-color: var(--color-black-btn-bg);
+    }
+
+    .red-border-btn {
+        border-color: var(--color-black-btn-bg);
+        gap: 10px;
+    }
+
+    .slogans {
+        padding-left: 18px;
+        border-left: 5px solid var(--color-red-text);
+        /* background-color: var(--color-red-text); */
+        /* width: 112px; */
+
+        & .slogan {
+            font-size: var(--font-size-36-26);
+            font-weight: 500;
+            line-height: 120%;
+            text-transform: uppercase;
+            color: var(--color-red-text);
+        }
+    }
+
+    & .image {
+        align-self: flex-end;
+    }
+}
+
+/* Медиа-запросы для DO-NOW */
+@media(max-width: 1919px) {
+    .do-now {
+        & .do-now__container {
+            padding-top: calc(30px + (43 - 30) * ((100vw - 1200px) / (1919 - 1200)));
+            padding-left: calc(50px + (200 - 50) * ((100vw - 1200px) / (1919 - 1200)));
+            padding-right: calc(50px + (150 - 50) * ((100vw - 1200px) / (1919 - 1200)));
+        }
+
+        & .info {
+            padding-top: calc(30px + (37 - 30) * ((100vw - 1200px) / (1919 - 1200)));
+        }
+
+        & .title {
+            margin-bottom: calc(15px + (20 - 15) * ((100vw - 1200px) / (1919 - 1200)));
+        }
+
+        & .line {
+            margin-bottom: calc(30px + (40 - 30) * ((100vw - 1200px) / (1919 - 1200)));
+        }
+
+        & .text {
+            margin-bottom: calc(40px + (60 - 40) * ((100vw - 1200px) / (1919 - 1200)));
+        }
+    }
+}
+
+@media(max-width: 1399px) {
+    .do-now {
+        .image {
+            width: 502px;
+            flex-shrink: 0;
+        }
+    }
+}
+
+@media(max-width: 1199px) {
+    .do-now {
+        & .do-now__container {
+            padding-left: calc(30px + (50 - 30) * ((100vw - 1000px) / (1199 - 1000)));
+            padding-right: calc(30px + (50 - 30) * ((100vw - 1000px) / (1199 - 1000)));
+        }
+    }
+}
+
+@media(max-width: 1049px) {
+    .do-now {
+        & .info {
+            /* padding-top: 0px; */
+            padding-bottom: 30px;
+        }
+
+        & .buttons {
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@media(max-width: 999px) {
+    .do-now {
+        & .do-now__container {
+            padding-left: 30px;
+            padding-right: 30px;
+            gap: calc(15px + (30 - 15) * ((100vw - 850px) / (999 - 850)));
+        }
+
+        /*         & .buttons {
+            gap: calc(10px + (30 - 10) * ((100vw - 850px) / (999 - 850)));
+        } */
+
+        & .image {
+            width: calc(380px + (502 - 380) * ((100vw - 772px) / (999 - 772)));
+
+            & img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media(max-width: 849px) {
+    .do-now {
+        & .do-now__container {
+            padding-top: 30px;
+        }
+
+        & .info {
+            padding-top: 0px;
+            /* padding-bottom: 30px; */
+        }
+
+        /*         & .buttons {
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-bottom: 40px;
+        } */
+    }
+}
+
+@media(max-width: 772px) {
+    .do-now {
+        & .do-now__container {
+            flex-direction: column;
+            padding-left: calc(20px + (30 - 20) * ((100vw - 650px) / (772 - 650)));
+            padding-right: calc(20px + (30 - 20) * ((100vw - 650px) / (772 - 650)));
+        }
+
+        & .title {
+            max-width: 480px;
+        }
+
+        & .text {
+            max-width: 480px;
+            margin-bottom: 30px;
+        }
+
+        & .buttons {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        & .image {
+            margin-top: calc(-140px + (-300 - -140) * ((100vw - 650px) / (772 - 650)));
+            width: calc(290px + (380 - 290) * ((100vw - 580px) / (772 - 580)));
+        }
+    }
+}
+
+@media(max-width: 649px) {
+    .do-now {
+        & .do-now__container {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        & .image {
+            margin-top: -140px;
+            align-self: flex-end;
+        }
+    }
+}
+
+@media(max-width: 439px) {
+    .do-now {
+        & .do-now__container {}
+
+        & .info {
+            padding-bottom: 20px;
+        }
+
+        & .title {
+            margin-bottom: 12px;
+        }
+
+        & .line {
+            margin-bottom: 20px;
+        }
+
+        & .image {
+            margin-top: 0px;
+            align-self: center;
+            width: calc(180px + (225 - 180) * ((100vw - 360px) / (439 - 360)));
+            min-width: 180px;
+        }
+
+        & .breakable-space {
+            display: none;
+        }
+
+        & .not-breakable-space {
+            display: inline-block;
+        }
+    }
+}
+
 
 /* Медиа-запросы для ADVANTAGES */
 @media(max-width: 767px) {
