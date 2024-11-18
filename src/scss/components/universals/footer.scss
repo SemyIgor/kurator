@@ -13,10 +13,14 @@
         /* column-gap: 30px; */
 
         & .first__column {
-            & .policy span {
-                color: var(--color-gray-text);
+            & .policy {
                 visibility: hidden;
+
+                & span {
+                    color: var(--color-gray-text);
+                }
             }
+
         }
 
         & span {
@@ -52,6 +56,7 @@
         }
 
         /* Вторая, третья и четвёртая колонка */
+        /* Прячем "хвост", который появится позже для имитации объединения колонок  */
         & .list-tail {
             display: none;
         }
@@ -75,27 +80,42 @@
                 opacity: .7;
             }
         }
+
+        & a:hover {
+            cursor: pointer;
+            opacity: .7;
+        }
     }
 
     &__grid--bottom {
         display: grid;
         grid-template-columns: 1fr 1fr;
 
-        & span {
+        & a {
+            /* display: inline-block; */
+            width: fit-content;
             color: var(--color-gray-text);
             font-weight: 400;
 
             &:first-child {
                 font-size: 16px;
+
+                &:hover {
+                    cursor: pointer;
+                    opacity: .7;
+                }
             }
 
             &:last-child {
                 font-size: 20px;
                 /* Сдвигаем на половину длины текста */
                 transform: translateX(-85px);
+
+                /*                 &:hover {
+                    pointer-events: none;
+                } */
             }
         }
-
     }
 }
 
@@ -146,12 +166,10 @@
 
         & .first__column {
             & .policy {
+                display: block;
                 margin-top: 12px;
                 margin-bottom: 30px;
-
-                & span {
-                    visibility: visible;
-                }
+                visibility: visible;
             }
         }
 
@@ -168,11 +186,11 @@
         &__grid--bottom {
             grid-template-columns: 1fr;
 
-            & span:first-child {
+            & a:first-child {
                 display: none;
             }
 
-            & span:last-child {
+            & a:last-child {
                 transform: translateX(0);
                 justify-self: center;
             }
