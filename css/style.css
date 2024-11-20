@@ -40,6 +40,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -221,6 +222,7 @@ section {
   --color-white-text: #ffffff;
   --color-white-bg: #ffffff;
   --color-decorated-text: #7097B0;
+  --color-decorated-text-2: #307ECC;
   --color-form-bg: #c8aab9;
   --color-red-bg: #EF172F;
   --color-red-text: #EF172F;
@@ -240,6 +242,7 @@ section {
   /* Шрифты */
   --font-size-48-32: 48px;
   --font-size-48-28: 48px;
+  --font-size-48-24: 48px;
   --font-size-48-22: 48px;
   --font-size-42-24: 42px;
   --font-size-40-22: 40px;
@@ -247,6 +250,7 @@ section {
   --font-size-36-16: 36px;
   --font-size-32-22: 32px;
   --font-size-26-18: 26px;
+  --font-size-24-18: 24px;
   --font-size-24-16: 24px;
   --font-size-20-16: 20px;
   --font-size-20-14: 20px;
@@ -259,6 +263,7 @@ section {
   :root {
     --font-size-48-32: calc(32px + (48 - 32) * ((100vw - 360px) / (1919 - 360)));
     --font-size-48-28: calc(28px + (48 - 28) * ((100vw - 360px) / (1919 - 360)));
+    --font-size-48-24: calc(24px + (48 - 24) * ((100vw - 360px) / (1919 - 360)));
     --font-size-48-22: calc(22px + (48 - 22) * ((100vw - 360px) / (1919 - 360)));
     --font-size-42-24: calc(24px + (42 - 24) * ((100vw - 360px) / (1919 - 360)));
     --font-size-40-22: calc(22px + (40 - 22) * ((100vw - 360px) / (1919 - 360)));
@@ -266,6 +271,7 @@ section {
     --font-size-36-16: calc(16px + (36 - 16) * ((100vw - 360px) / (1919 - 360)));
     --font-size-32-22: calc(22px + (32 - 22) * ((100vw - 360px) / (1919 - 360)));
     --font-size-26-18: calc(18px + (26 - 18) * ((100vw - 360px) / (1919 - 360)));
+    --font-size-24-18: calc(18px + (24 - 18) * ((100vw - 360px) / (1919 - 360)));
     --font-size-24-16: calc(16px + (24 - 16) * ((100vw - 360px) / (1919 - 360)));
     --font-size-20-16: calc(16px + (20 - 16) * ((100vw - 360px) / (1919 - 360)));
     --font-size-20-14: calc(14px + (20 - 14) * ((100vw - 360px) / (1919 - 360)));
@@ -2143,5 +2149,325 @@ section {
     justify-self: end;
     -ms-flex-item-align: center;
     align-self: center;
+  }
+}
+.shadow {
+  position: fixed;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 100;
+  -webkit-transition: background-color 0.5s, -webkit-transform 0.5s;
+  transition: background-color 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s, background-color 0.5s;
+  transition: transform 0.5s, background-color 0.5s, -webkit-transform 0.5s;
+  /* Дополнительный экран для прозрачного фонового изображения */
+  /* Отодвигаем его за псевдоэлемент с фоновым изображением */
+}
+.shadow .shadow__container {
+  padding-left: 0;
+  padding-right: 0;
+}
+.shadow--shown {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.shadow .white-bg {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: calc(100% - 40px);
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: var(--color-white-bg);
+  left: 50%;
+  -webkit-transform: translate(-50%, 230px);
+  -ms-transform: translate(-50%, 230px);
+  transform: translate(-50%, 230px);
+}
+.shadow .call-order-form {
+  max-width: 650px;
+  position: relative;
+  padding: 60px;
+  /* Фоновое изображение на псевдоэлемент и отодвигаем его за контент */
+}
+.shadow .call-order-form::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url("../images/main/call_order_form_bg.png");
+  /* Картинка с прозрачностью 0.6 */
+  /* background-image: url('../../../images/main/call_order_form_bg_opacity_06.png'); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: screen;
+  opacity: 0.6;
+}
+.shadow .cross-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.shadow .title {
+  font-size: var(--font-size-48-24);
+  font-weight: 700;
+  color: var(--color-black-text);
+  margin-bottom: 8px;
+}
+.shadow .line {
+  border: 1px solid var(--color-decorated-text);
+  background-color: var(--color-decorated-text);
+  width: 150px;
+  height: 3px;
+  margin-bottom: 30px;
+}
+.shadow .question-form {
+  display: grid;
+  grid-template-columns: 250px 250px;
+  gap: 30px;
+  margin-bottom: 32px;
+  /* Позиционируем asterisk относительно label */
+  /* Абсолютное позиционирование asterisk-а */
+  /* Если внутри label-а input в фокусе, то asterisk скрываем */
+}
+.shadow .question-form label {
+  position: relative;
+}
+.shadow .question-form .asterisk {
+  position: absolute;
+  top: 10px;
+  left: 170px;
+  z-index: 10;
+  color: var(--color-red-text);
+  font-size: 16px;
+}
+.shadow .question-form label:has(input:focus) .asterisk {
+  display: none;
+}
+.shadow .question-form input {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-black-text);
+  border: 1px solid var(--color-gray-text);
+  border-radius: 8px;
+  width: 250px;
+  height: 50px;
+}
+.shadow .question-form input::-webkit-input-placeholder {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-text);
+}
+.shadow .question-form input::-moz-placeholder {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-text);
+}
+.shadow .question-form input:-ms-input-placeholder {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-text);
+}
+.shadow .question-form input::-ms-input-placeholder {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-text);
+}
+.shadow .question-form input::placeholder {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-text);
+}
+.shadow .question-form input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+.shadow .question-form input:focus::-moz-placeholder {
+  color: transparent;
+}
+.shadow .question-form input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+.shadow .question-form input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+.shadow .question-form input:focus::placeholder {
+  color: transparent;
+}
+.shadow .question-form__name, .shadow .question-form__phone {
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+}
+.shadow .form-result {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.shadow .remark {
+  color: #2e2e2e;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-black-text);
+}
+.shadow .remark a {
+  color: var(--color-decorated-text-2);
+  display: inline-block;
+  vertical-align: middle;
+}
+.shadow .red-btn.no-switch {
+  height: 50px;
+  border-radius: 54px;
+  justify-self: end;
+  margin-bottom: 4px;
+}
+
+.order-accepted-window .call-order-form {
+  padding-right: 55px;
+  padding-bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.order-accepted-window .message {
+  font-size: var(--font-size-24-18);
+  font-weight: 700;
+  color: var(--color-black-text);
+  margin-bottom: 30px;
+}
+.order-accepted-window .checkbox-order-accepted__image {
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+@media (max-width: 1199px) {
+  .shadow .white-bg {
+    -webkit-transform: translate(-50%, calc(70px + 160 * (100vw - 360px) / 839));
+    -ms-transform: translate(-50%, calc(70px + 160 * (100vw - 360px) / 839));
+    transform: translate(-50%, calc(70px + 160 * (100vw - 360px) / 839));
+  }
+}
+@media (max-width: 689px) {
+  .shadow .white-bg {
+    max-width: 100%;
+  }
+  .shadow .call-order-form {
+    padding-left: calc(30px + 30 * (100vw - 590px) / 99);
+    padding-right: calc(30px + 30 * (100vw - 590px) / 99);
+    padding-top: calc(30px + 30 * (100vw - 590px) / 99);
+    padding-bottom: calc(30px + 30 * (100vw - 590px) / 99);
+  }
+  .shadow .question-form {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 32px;
+  }
+  .shadow .question-form input {
+    width: 100%;
+  }
+  .shadow .form-result {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 30px;
+  }
+  .shadow .red-btn.no-switch {
+    width: 250px;
+  }
+  .order-accepted-window .call-order-form {
+    padding-top: 60px;
+    padding-bottom: calc(50px + -10 * (100vw - 360px) / 329);
+  }
+}
+@media (max-width: 589px) {
+  .shadow .call-order-form {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .order-accepted-window .call-order-form {
+    padding-top: 60px;
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 489px) {
+  .shadow .call-order-form {
+    padding-left: calc(20px + 10 * (100vw - 360px) / 129);
+    padding-right: calc(20px + 10 * (100vw - 360px) / 129);
+    padding-top: calc(60px + -30 * (100vw - 360px) / 129);
+    padding-bottom: calc(60px + -30 * (100vw - 360px) / 129);
+  }
+  .shadow .line {
+    margin-bottom: calc(20px + 10 * (100vw - 360px) / 129);
+  }
+  .shadow .question-form {
+    grid-template-columns: 320px;
+    gap: calc(15px + 15 * (100vw - 360px) / 129);
+    margin-bottom: calc(10px + 22 * (100vw - 360px) / 129);
+  }
+  .shadow .question-form input {
+    height: calc(40px + 10 * (100vw - 360px) / 129);
+  }
+  .shadow .form-result {
+    gap: calc(40px + -10 * (100vw - 360px) / 129);
+  }
+  .shadow .red-btn.no-switch {
+    justify-self: center;
+    width: calc(181px + 69 * (100vw - 360px) / 129);
+    height: calc(40px + 10 * (100vw - 360px) / 129);
+  }
+  .order-accepted-window .call-order-form {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .order-accepted-window .title {
+    margin-bottom: calc(15px + -7 * (100vw - 360px) / 129);
+  }
+  .order-accepted-window .message {
+    text-align: center;
+    margin-bottom: calc(40px + -10 * (100vw - 360px) / 129);
   }
 }
