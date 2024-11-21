@@ -130,14 +130,4 @@ export default function shadow() {
     }
 
     // --- Конец модуля работы с тенью
-
-    // Проверяем, есть ли иконка бургера на текущей странице
-    // if (headerBurger) {
-    //     // Подключаем "слушатель" к иконке бургера
-    //     headerBurger.addEventListener("click", (event) => {
-    //         showShadow();
-    //     });
-    // } else {
-    //     console.log("Нет иконки бургера");
-    // }
 }

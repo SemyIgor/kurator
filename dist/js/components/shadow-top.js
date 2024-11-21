@@ -1,18 +1,26 @@
 export default function shadowTop() {
+    // Находим иконку бургера
+    const headerBurger = document.querySelector(".header .burger");
+
     // Находим верхнее тёмное окно
     const shadowTopBg = document.querySelector(".shadow-top");
-    console.log("shadowTopBg: ", shadowTopBg);
 
-    document.addEventListener("DOMContentLoaded", function () {
-        console.log("DOM полностью загружен и обработан");
-        displayCookieWindow();
-        showShadow();
-    });
+    // Проверяем, есть ли иконка бургера на текущей странице
+    if (headerBurger) {
+        // Подключаем "слушатель" к иконке бургера
+        headerBurger.addEventListener("click", (event) => {
+            event.preventDefault();
 
-    // Функция "включения" окна-сообщения об использовании cookie
-    function displayCookieWindow() {
-        const cookieWindow = shadowTopBg.querySelector(".cookie-window");
-        cookieWindow.classList.remove("display--none");
+            displayBurgerWindow();
+            showShadow();
+        });
+    } else {
+        console.log("Нет иконки бургера");
+    }
+
+    // Функция "включения" окна с бургер-меню
+    function displayBurgerWindow() {
+        const burgerWindow = shadowTopBg.querySelector(".burger-window");
     }
 
     // Показываем затемнённое окно
