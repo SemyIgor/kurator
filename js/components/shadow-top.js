@@ -21,6 +21,19 @@ export default function shadowTop() {
     // Функция "включения" окна с бургер-меню
     function displayBurgerWindow() {
         const burgerWindow = shadowTopBg.querySelector(".burger-window");
+
+        // Обработка крестика закрытия окна
+        crossToCloseWindow(burgerWindow);
+    }
+
+    // Функция закрытия окна по клику на крестик
+    function crossToCloseWindow(popUp) {
+        // Находим крестик закрытия окна и подключаем слушатель
+        const crossClose = popUp.querySelector(".cross-close");
+        crossClose.addEventListener("click", (event) => {
+            popUp.classList.add("display--none");
+            hideShadow();
+        });
     }
 
     // Показываем затемнённое окно
