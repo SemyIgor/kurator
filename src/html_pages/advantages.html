@@ -1,0 +1,237 @@
+@@include('html_parts/universals/head.html')
+
+<div class="page-wrapper advantages-page">
+
+    @@include('html_parts/universals/_header.html')
+
+    <main class="main center">
+        <!-- Затемнённый фон слева и его содержимое -->
+        <!-- Содержит заказ звонка -->
+        <div class="shadow center">
+            <div class="shadow__container">
+
+                <!-- Окно заказа звонка -->
+                <div class="white-bg call-order-window shadow-child display--none">
+                    <div class="call-order-form">
+
+                        <div class="cross-close">
+                            <img src="images/main/cross_close.svg" alt="Cross Close">
+                        </div>
+
+                        <div class="title">Заказ звонка</div>
+
+                        <div class="line"></div>
+
+                        <form action="#" id="question-form" class="question-form">
+                            <label>
+                                <div class="asterisk">*</div>
+                                <input type="text" name="user-name" id="" placeholder="Введите Ваше Имя"
+                                    class="question-form__name">
+                            </label>
+                            <label>
+                                <div class="asterisk">*</div>
+                                <input type="tel" name="user-phone" id="" placeholder="+375 (XX) XXX-XX-XX"
+                                    class="question-form__phone">
+                            </label>
+                        </form>
+
+                        <div class="form-result">
+                            <p class="remark">Отправляя форму, вы соглашаетесь с<a href="#">политикой&nbsp; </a>
+                                обработки и
+                                использования
+                                персональных
+                                данных</p>
+                            <button type="submit" form="question-form" class="red-btn no-switch"><span>Задать
+                                    вопрос</span><span></span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Окно = Заявка принята = -->
+                <!-- <div class="white-bg shadow-child display--none"> -->
+                <div class="white-bg order-accepted-window shadow-child display--none">
+                    <div class="call-order-form">
+
+                        <div class="cross-close">
+                            <img src="images/main/cross_close.svg" alt="Cross Close">
+                        </div>
+
+                        <div class="title">Заявка принята</div>
+
+                        <div class="line"></div>
+
+                        <div class="message">Мы перезвоним Вам в ближайшее время!</div>
+
+                        <div class="checkbox-order-accepted__image">
+                            <img src="images/main/order_accepted_checkbox.svg" alt="Order Accepted Checkbox">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Затемнённый фон снизу и его содержимое -->
+        <!-- Содержит окно "Cookie" -->
+        <div class="shadow-bottom center">
+            <div class="shadow-bottom__container">
+                <!-- Окно предупреждения о "куки" -->
+                <div class="cookie-window shadow-child display--none">
+                    <p class="text">
+                        Мы используем файлы cookie. Вы можете <span>настроить cookie-файлы</span>
+                        и ознакомиться с нашей политикой использования cookie-файлов.
+                    </p>
+                    <div class="buttons">
+                        <button class="red-btn switch"><span>Принять</span><span>Принять</span></button>
+                        <button class="red-border-btn switch"><span>Отказаться</span>
+                            <span>Отказаться</span></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Затемнённый фон сверху и его содержимое -->
+        <!-- Содержит окно бургер-меню -->
+        <div class="shadow-top center">
+            <div class="shadow-top__container">
+                <!-- Окно бургер-меню -->
+                <div class="burger-window shadow-child">
+
+                    <div class="cross-close">
+                        <img src="images/main/cross_close.svg" alt="Cross Close">
+                    </div>
+
+                    <div class="logo">
+                        <a href="#"><img src="images/main/header/logo.svg" alt="Header Logo"></a>
+                    </div>
+
+                    @@include('html_parts/universals/_socials.html')
+
+                    @@include('html_parts/universals/_nav_burger.html')
+
+                    <div class="line-top"></div>
+
+                    @@include('html_parts/universals/_contacts.html')
+
+                    <div class="line-bottom"></div>
+
+                    <div class="clock">
+                        <div class="clock-img">
+                            <img src="images/main/header/clock.svg" alt="Clock">
+                        </div>
+                        <div class="clock-text">
+                            <span>контакт-центр</span>
+                        </div>
+                        <div class="clock-time">
+                            <span>с 8:00 до 22:00</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        @@include('html_parts/universals/_nav.html')
+
+        <section class="diploma center">
+            <div class="diploma__container">
+
+                <div class="diploma__left">
+
+                    <div class="title">Дипломная
+                        Работа</div>
+
+                    <div class="line"></div>
+
+                    <div class="text">Поможем вам создать качественную дипломную работу, соответствующую всем
+                        требованиям вашего учебного заведения. Наша
+                        команда экспертов обеспечит глубокий анализ темы и оригинальность содержания.</div>
+
+                    <button class="red-btn no-switch"><span>Заказать работу</span><span>Заказать</span></button>
+                </div>
+
+                <div class="diploma__img">
+                    <img src="images/advantages/diploma.jpg" alt="Diploma">
+                </div>
+            </div>
+        </section>
+
+        <section class="advantages center">
+            <div class="advantages__container">
+                <!-- <div class="board__content"> -->
+
+                <div class="advantage">
+                    <div class="image">
+                        <img src="images/advantages/advantage-01.svg" alt="Advantage 01">
+                    </div>
+                    <div class="title">Уникальность</div>
+                    <div class="line"></div>
+                    <div class="text">Каждая работа разрабатывается индивидуально и учитывает ваши пожелания и специфику
+                        темы</div>
+                </div>
+
+                <div class="advantage">
+                    <div class="image">
+                        <img src="images/advantages/advantage-02.svg" alt="Advantage 02">
+                    </div>
+                    <div class="title">Специальности</div>
+                    <div class="line"></div>
+                    <div class="text">Менеджмент, маркетинг, логистика, мировая экономика, бизнес-администрирование,
+                        экономика и управление на предприятии,
+                        государственное управление и экономика и др.</div>
+                </div>
+
+                <div class="advantage">
+                    <div class="image">
+                        <img src="images/advantages/advantage-03.svg" alt="Advantage 03">
+                    </div>
+                    <div class="title">В стоимость входит</div>
+                    <div class="line"></div>
+                    <div class="text">Доработки, оформление по нормоконролю, презентация доклада и речь на защите</div>
+                </div>
+
+                <!-- </div> -->
+            </div>
+        </section>
+
+        <section class="more-info center">
+            <div class="more-info__container">
+                <div class="image">
+                    <img src="images/advantages/more_info-01.jpg" alt="Student Hat">
+                    <img src="images/advantages/more_info-02.jpg" alt="Student Hat">
+                </div>
+                <div class="info">
+                    <div class="title">Подробнее
+                        об услуге</div>
+                    <div class="line"></div>
+                    <div class="text">
+                        <p>Помогаем в подготовке дипломных работ по экономическим, гуманитарным, управленческим
+                            специальностям. Заказать дипломную
+                            работу у нас может обучающийся любого учебного заведения Беларуси.
+                        </p>
+                        <p>Оказываем помощь в написании диплома по экономическим специальностям: менеджмент, маркетинг,
+                            логистика, мировая
+                            экономика, бизнес-администрирование, экономика и управление на предприятии, государственное
+                            управление и экономика и
+                            т.д.
+                        </p>
+                        <p>Наше главное преимущество – качество. Чтобы достичь идеального, нанимаем специалистов своего
+                            дела. Например, работу по
+                            логистике пишет специалист в данной сфере, а дипломную работу по маркетингу –практикующий
+                            маркетолог.
+                        </p>
+                        <p>На заказ дипломная работа любого уровня сложности по выгодной цене.</p>
+                        <p>В стоимость написания дипломной работы включены доработки, оформление по нормоконролю,
+                            презентация доклада и речь на
+                            защите.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    @@include('html_parts/universals/_footer.html')
+</div>
+
+@@include('html_parts/universals/foot.html')

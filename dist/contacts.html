@@ -18,7 +18,9 @@
 
 <body class="page__body">
 
-<header class="header center">
+<div class="page-wrapper contacts-page">
+
+    <header class="header center">
     <div class="header__container">
 
         <div class="socials">
@@ -35,33 +37,36 @@
         </div>
 
         <div class="contacts">
-            <a href="#" class="telegram">
-                <img src="images/main/header/telegram_contact.svg" alt="Telegram Icon">
-                <span>Telegram</span>
-            </a>
-            <a href="#" class="viber">
-                <img src="images/main/header/viber_contact.svg" alt="Viber Icon">
-                <span>Viber</span>
-            </a>
-            <a href="#" class="phone">
-                <img src="images/main/header/phone_contact.svg" alt="Phone Icon">
-                <span>+375 (33) 994 32 62</span>
-            </a>
-            <a href="#" class="mail">
-                <img src="images/main/header/mail_contact.svg" alt="Phone Icon">
-                <span>kuratorminsk@mail.ru</span>
-            </a>
-            <div class="clock-line"></div>
-            <div class="clock-img">
-                <img src="images/main/header/clock.svg" alt="Clock">
-            </div>
-            <div class="clock-text">
-                <span>контакт-центр</span>
-            </div>
-            <div class="clock-time">
-                <span>с 8:00 до 22:00</span>
-            </div>
-        </div>
+    <a href="#" class="telegram">
+        <img src="images/main/header/telegram_contact.svg" alt="Telegram Icon">
+        <span>Telegram</span>
+    </a>
+    <a href="#" class="viber">
+        <img src="images/main/header/viber_contact.svg" alt="Viber Icon">
+        <span>Viber</span>
+    </a>
+    <a href="#" class="phone">
+        <img src="images/main/header/phone_contact.svg" alt="Phone Icon">
+        <span>+375 (33) 994 32 62</span>
+    </a>
+    <a href="#" class="mail">
+        <img src="images/main/header/mail_contact.svg" alt="Phone Icon">
+        <span>kuratorminsk@mail.ru</span>
+    </a>
+    <div class="clock-line"></div>
+    <div class="clock-img">
+        <img src="images/main/header/clock.svg" alt="Clock">
+    </div>
+    <div class="clock-text">
+        <span>контакт-центр</span>
+    </div>
+    <div class="clock-time">
+        <span>с 8:00 до 22:00</span>
+    </div>
+</div>
+
+
+
 
         <div class="burger">
             <button><img src="images/main/header/burger.svg" alt="Burger"></button>
@@ -69,25 +74,194 @@
     </div>
 </header>
 
-<nav class="header-nav center">
+    <main class="main center">
+        <!-- Затемнённый фон слева и его содержимое -->
+        <!-- Содержит заказ звонка -->
+        <div class="shadow center">
+            <div class="shadow__container">
+
+                <!-- Окно заказа звонка -->
+                <div class="white-bg call-order-window shadow-child display--none">
+                    <div class="call-order-form">
+
+                        <div class="cross-close">
+                            <img src="images/main/cross_close.svg" alt="Cross Close">
+                        </div>
+
+                        <div class="title">Заказ звонка</div>
+
+                        <div class="line"></div>
+
+                        <form action="#" id="question-form" class="question-form">
+                            <label>
+                                <div class="asterisk">*</div>
+                                <input type="text" name="user-name" id="" placeholder="Введите Ваше Имя"
+                                    class="question-form__name">
+                            </label>
+                            <label>
+                                <div class="asterisk">*</div>
+                                <input type="tel" name="user-phone" id="" placeholder="+375 (XX) XXX-XX-XX"
+                                    class="question-form__phone">
+                            </label>
+                        </form>
+
+                        <div class="form-result">
+                            <p class="remark">Отправляя форму, вы соглашаетесь с<a href="#">политикой&nbsp; </a>
+                                обработки и
+                                использования
+                                персональных
+                                данных</p>
+                            <button type="submit" form="question-form" class="red-btn no-switch"><span>Задать
+                                    вопрос</span><span></span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Окно = Заявка принята = -->
+                <!-- <div class="white-bg shadow-child display--none"> -->
+                <div class="white-bg order-accepted-window shadow-child display--none">
+                    <div class="call-order-form">
+
+                        <div class="cross-close">
+                            <img src="images/main/cross_close.svg" alt="Cross Close">
+                        </div>
+
+                        <div class="title">Заявка принята</div>
+
+                        <div class="line"></div>
+
+                        <div class="message">Мы перезвоним Вам в ближайшее время!</div>
+
+                        <div class="checkbox-order-accepted__image">
+                            <img src="images/main/order_accepted_checkbox.svg" alt="Order Accepted Checkbox">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Затемнённый фон снизу и его содержимое -->
+        <!-- Содержит окно "Cookie" -->
+        <div class="shadow-bottom center">
+            <div class="shadow-bottom__container">
+                <!-- Окно предупреждения о "куки" -->
+                <div class="cookie-window shadow-child display--none">
+                    <p class="text">
+                        Мы используем файлы cookie. Вы можете <span>настроить cookie-файлы</span>
+                        и ознакомиться с нашей политикой использования cookie-файлов.
+                    </p>
+                    <div class="buttons">
+                        <button class="red-btn switch"><span>Принять</span><span>Принять</span></button>
+                        <button class="red-border-btn switch"><span>Отказаться</span>
+                            <span>Отказаться</span></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Затемнённый фон сверху и его содержимое -->
+        <!-- Содержит окно бургер-меню -->
+        <div class="shadow-top center">
+            <div class="shadow-top__container">
+                <!-- Окно бургер-меню -->
+                <div class="burger-window shadow-child">
+
+                    <div class="cross-close">
+                        <img src="images/main/cross_close.svg" alt="Cross Close">
+                    </div>
+
+                    <div class="logo">
+                        <a href="#"><img src="images/main/header/logo.svg" alt="Header Logo"></a>
+                    </div>
+
+                    <div class="socials">
+    <ul>
+        <li><a href="#"><img src="images/main/header/telegram.svg" alt="Telegram Icon"></a></li>
+        <li><a href="#"><img src="images/main/header/viber.svg" alt="Viber Icon"></a></li>
+        <li><a href="#"><img src="images/main/header/insta.svg" alt="Instagram Icon"></a></li>
+        <li><a href="#"><img src="images/main/header/vk.svg" alt="VK Icon"></a></li>
+    </ul>
+</div>
+
+                    <nav class="burger-nav">
+    <ul>
+        <li><a href="main.html">Заказать работу</a></li>
+        <li><a href="china_lang.html">来自中国的学生</a></li>
+        <li><a href="works_base.html">База бесплатных работ</a></li>
+        <li><a href="advantages.html">Наши преимущества</a></li>
+        <li><a href="pub_contract.html">Публичный договор</a></li>
+        <li><a href="payments.html">Способы оплаты</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+</nav>
+
+                    <div class="line-top"></div>
+
+                    <div class="contacts">
+    <a href="#" class="telegram">
+        <img src="images/main/header/telegram_contact.svg" alt="Telegram Icon">
+        <span>Telegram</span>
+    </a>
+    <a href="#" class="viber">
+        <img src="images/main/header/viber_contact.svg" alt="Viber Icon">
+        <span>Viber</span>
+    </a>
+    <a href="#" class="phone">
+        <img src="images/main/header/phone_contact.svg" alt="Phone Icon">
+        <span>+375 (33) 994 32 62</span>
+    </a>
+    <a href="#" class="mail">
+        <img src="images/main/header/mail_contact.svg" alt="Phone Icon">
+        <span>kuratorminsk@mail.ru</span>
+    </a>
+    <div class="clock-line"></div>
+    <div class="clock-img">
+        <img src="images/main/header/clock.svg" alt="Clock">
+    </div>
+    <div class="clock-text">
+        <span>контакт-центр</span>
+    </div>
+    <div class="clock-time">
+        <span>с 8:00 до 22:00</span>
+    </div>
+</div>
+
+                    <div class="line-bottom"></div>
+
+                    <div class="clock">
+                        <div class="clock-img">
+                            <img src="images/main/header/clock.svg" alt="Clock">
+                        </div>
+                        <div class="clock-text">
+                            <span>контакт-центр</span>
+                        </div>
+                        <div class="clock-time">
+                            <span>с 8:00 до 22:00</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <nav class="header-nav center">
     <div class="header-nav__container">
         <ul>
-            <li><a href="#">Заказать работу</a></li>
-            <li><a href="#">来自中国的学生</a></li>
-            <li><a href="#">База бесплатных работ</a></li>
-            <li><a href="#">Наши преимущества</a></li>
-            <li><a href="#">Публичный договор</a></li>
-            <li><a href="#">Способы оплаты</a></li>
-            <li><a href="#">Контакты</a></li>
+            <li><a href="main.html">Заказать работу</a></li>
+            <li><a href="china_lang.html">来自中国的学生</a></li>
+            <li><a href="works_base.html">База бесплатных работ</a></li>
+            <li><a href="advantages.html">Наши преимущества</a></li>
+            <li><a href="pub_contract.html">Публичный договор</a></li>
+            <li><a href="payments.html">Способы оплаты</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
         </ul>
     </div>
 </nav>
 
-<section class="contacts center">
+    </main>
 
-</section>
-
-<footer class="footer center">
+    <footer class="footer center">
     <div class="footer__container">
         <div class="footer__grid">
 
@@ -177,6 +351,7 @@
         </div>
     </div>
 </footer>
+</div>
 
 <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
 

@@ -6,6 +6,7 @@
 
     <main class="main center">
         <!-- Затемнённый фон слева и его содержимое -->
+        <!-- Содержит заказ звонка -->
         <div class="shadow center">
             <div class="shadow__container">
 
@@ -71,6 +72,7 @@
         </div>
 
         <!-- Затемнённый фон снизу и его содержимое -->
+        <!-- Содержит окно "Cookie" -->
         <div class="shadow-bottom center">
             <div class="shadow-bottom__container">
                 <!-- Окно предупреждения о "куки" -->
@@ -90,6 +92,7 @@
         </div>
 
         <!-- Затемнённый фон сверху и его содержимое -->
+        <!-- Содержит окно бургер-меню -->
         <div class="shadow-top center">
             <div class="shadow-top__container">
                 <!-- Окно бургер-меню -->
@@ -103,48 +106,13 @@
                         <a href="#"><img src="images/main/header/logo.svg" alt="Header Logo"></a>
                     </div>
 
-                    <div class="socials">
-                        <ul>
-                            <li><a href="#"><img src="images/main/header/telegram.svg" alt="Telegram Icon"></a></li>
-                            <li><a href="#"><img src="images/main/header/viber.svg" alt="Viber Icon"></a></li>
-                            <li><a href="#"><img src="images/main/header/insta.svg" alt="Instagram Icon"></a></li>
-                            <li><a href="#"><img src="images/main/header/vk.svg" alt="VK Icon"></a></li>
-                        </ul>
-                    </div>
-                    <!-- @@include('html_parts/universals/_socials.html') -->
+                    @@include('html_parts/universals/_socials.html')
 
-                    <nav class="burger-nav">
-                        <ul>
-                            <li><a href="#">Заказать работу</a></li>
-                            <li><a href="#">来自中国的学生</a></li>
-                            <li><a href="#">База бесплатных работ</a></li>
-                            <li><a href="#">Наши преимущества</a></li>
-                            <li><a href="#">Публичный договор</a></li>
-                            <li><a href="#">Способы оплаты</a></li>
-                            <li><a href="#">Контакты</a></li>
-                        </ul>
-                    </nav>
+                    @@include('html_parts/universals/_nav_burger.html')
 
                     <div class="line-top"></div>
 
-                    <div class="contacts">
-                        <a href="#" class="telegram">
-                            <img src="images/main/header/telegram_contact.svg" alt="Telegram Icon">
-                            <span>Telegram</span>
-                        </a>
-                        <a href="#" class="viber">
-                            <img src="images/main/header/viber_contact.svg" alt="Viber Icon">
-                            <span>Viber</span>
-                        </a>
-                        <a href="#" class="phone">
-                            <img src="images/main/header/phone_contact.svg" alt="Phone Icon">
-                            <span>+375 (33) 994 32 62</span>
-                        </a>
-                        <a href="#" class="mail">
-                            <img src="images/main/header/mail_contact.svg" alt="Phone Icon">
-                            <span>kuratorminsk@mail.ru</span>
-                        </a>
-                    </div>
+                    @@include('html_parts/universals/_contacts.html')
 
                     <div class="line-bottom"></div>
 

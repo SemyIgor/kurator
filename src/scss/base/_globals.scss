@@ -109,6 +109,10 @@ section {
    color: var(--color-black-title);
 }
 
+.cross-close {
+   cursor: pointer;
+}
+
 /* Изменение rem при экранах от 1920px до 360px */
 @media (max-width: 1920px) {
 

@@ -132,6 +132,10 @@ section {
   color: var(--color-black-title);
 }
 
+.cross-close {
+  cursor: pointer;
+}
+
 /* Изменение rem при экранах от 1920px до 360px */
 @media (max-width: 1920px) {
   html,
@@ -234,18 +238,21 @@ section {
   --margin-80-30: 80px;
   --margin-60-30: 60px;
   --margin-40-30: 40px;
+  --margin-30-20: 30px;
   --margin-30-15: 30px;
   --margin-20-10: 20px;
   --margin-15-10: 15px;
   --padding-60-30: 60px;
   --padding-40-30: 40px;
   /* Шрифты */
+  --font-size-52-24: 52px;
   --font-size-48-32: 48px;
   --font-size-48-28: 48px;
   --font-size-48-24: 48px;
   --font-size-48-22: 48px;
   --font-size-42-24: 42px;
   --font-size-40-22: 40px;
+  --font-size-40-20: 40px;
   --font-size-36-26: 36px;
   --font-size-36-16: 36px;
   --font-size-32-22: 32px;
@@ -262,12 +269,14 @@ section {
 /* Responsive */
 @media (max-width: 1919px) {
   :root {
+    --font-size-52-24: calc(24px + (52 - 24) * ((100vw - 360px) / (1919 - 360)));
     --font-size-48-32: calc(32px + (48 - 32) * ((100vw - 360px) / (1919 - 360)));
     --font-size-48-28: calc(28px + (48 - 28) * ((100vw - 360px) / (1919 - 360)));
     --font-size-48-24: calc(24px + (48 - 24) * ((100vw - 360px) / (1919 - 360)));
     --font-size-48-22: calc(22px + (48 - 22) * ((100vw - 360px) / (1919 - 360)));
     --font-size-42-24: calc(24px + (42 - 24) * ((100vw - 360px) / (1919 - 360)));
     --font-size-40-22: calc(22px + (40 - 22) * ((100vw - 360px) / (1919 - 360)));
+    --font-size-40-20: calc(20px + (40 - 20) * ((100vw - 360px) / (1919 - 360)));
     --font-size-36-26: calc(26px + (36 - 26) * ((100vw - 360px) / (1919 - 360)));
     --font-size-36-16: calc(16px + (36 - 16) * ((100vw - 360px) / (1919 - 360)));
     --font-size-32-22: calc(22px + (32 - 22) * ((100vw - 360px) / (1919 - 360)));
@@ -282,11 +291,234 @@ section {
     --margin-80-30: calc(30px + (80 - 30) * ((100vw - 360px) / (1919 - 360)));
     --margin-60-30: calc(30px + (60 - 30) * ((100vw - 360px) / (1919 - 360)));
     --margin-40-30: calc(30px + (40 - 30) * ((100vw - 360px) / (1919 - 360)));
+    --margin-30-20: calc(20px + (30 - 20) * ((100vw - 360px) / (1919 - 360)));
     --margin-30-15: calc(15px + (30 - 15) * ((100vw - 360px) / (1919 - 360)));
     --margin-20-10: calc(10px + (20 - 10) * ((100vw - 360px) / (1919 - 360)));
     --margin-15-10: calc(10px + (15 - 10) * ((100vw - 360px) / (1919 - 360)));
     --padding-60-30: calc(30px + (60 - 30) * ((100vw - 360px) / (1919 - 360)));
     --padding-40-30: calc(30px + (40 - 30) * ((100vw - 360px) / (1919 - 360)));
+  }
+}
+.diploma .diploma__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 60px;
+}
+.diploma__left {
+  background-color: var(--color-card-bg);
+  padding-top: 170px;
+  padding-right: 204px;
+  padding-bottom: 176px;
+  padding-left: 200px;
+}
+.diploma .title {
+  max-width: 361px;
+  font-size: var(--font-size-52-24);
+  font-weight: 700;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: var(--color-black-text);
+  margin-bottom: 15px;
+}
+.diploma .line {
+  border: 1px solid var(--color-decorated-text);
+  background-color: var(--color-decorated-text);
+  width: 150px;
+  height: 3px;
+  margin-bottom: 30px;
+}
+.diploma .text {
+  font-size: var(--font-size-20-16);
+  font-weight: 400;
+  color: var(--color-black-text);
+  margin-bottom: 50px;
+}
+.diploma__img {
+  overflow: hidden;
+}
+.diploma__img img {
+  /* width: 960px; */
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.advantages-page .advantages {
+  margin-bottom: 0;
+}
+.advantages-page .advantages .advantages__container {
+  /* max-width: 1320px; */
+  background-color: var(--color-white-bg);
+  padding: 80px 300px;
+}
+.advantages-page .advantages .advantage {
+  justify-self: center;
+}
+.advantages-page .advantages .title {
+  font-size: var(--font-size-18-16);
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-black-text);
+  margin-bottom: var(--margin-15-10);
+}
+.advantages-page .advantages .text {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-black-text);
+}
+
+.more-info .more-info__container {
+  padding-left: 0;
+  padding-right: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.more-info .image {
+  overflow: hidden;
+}
+.more-info .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.more-info .image img:last-child {
+  display: none;
+}
+.more-info .info {
+  padding: 60px 100px 117px;
+  background-color: var(--color-nav-bg);
+}
+.more-info .title {
+  font-size: var(--font-size-40-20);
+  font-weight: 700;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: var(--color-black-text);
+  max-width: 251px;
+  margin-bottom: var(--margin-15-10);
+}
+.more-info .line {
+  border: 1px solid var(--color-decorated-text);
+  background-color: var(--color-decorated-text);
+  width: 150px;
+  height: 3px;
+  margin-bottom: var(--margin-30-20);
+}
+.more-info .text p {
+  font-size: var(--font-size-20-16);
+  font-weight: 400;
+  line-height: 120%;
+  color: var(--color-black-text);
+}
+.more-info .text p ~ p {
+  margin-top: 27px;
+}
+
+@media (max-width: 1919px) {
+  .diploma .diploma__container {
+    margin-top: calc(0px + 60 * (100vw - 620px) / 1299);
+  }
+  .diploma__left {
+    padding-top: calc(30px + 140 * (100vw - 768px) / 1151);
+    padding-right: calc(30px + 174 * (100vw - 768px) / 1151);
+    padding-bottom: calc(30px + 146 * (100vw - 768px) / 1151);
+    padding-left: calc(30px + 170 * (100vw - 768px) / 1151);
+  }
+  .advantages-page .advantages .advantages__container {
+    padding: calc(50px + 30 * (100vw - 1200px) / 719) calc(20px + 280 * (100vw - 1200px) / 719);
+  }
+  .advantages-page .advantages .text {
+    max-width: 410px;
+  }
+  .more-info .info {
+    padding-top: calc(30px + 30 * (100vw - 1200px) / 719);
+    padding-left: calc(30px + 70 * (100vw - 1200px) / 719);
+    padding-right: calc(30px + 70 * (100vw - 1200px) / 719);
+    padding-bottom: calc(30px + 87 * (100vw - 1200px) / 719);
+    background-color: var(--color-nav-bg);
+  }
+  .more-info .text p ~ p {
+    margin-top: calc(22px + 5 * (100vw - 360px) / 1559);
+  }
+}
+@media (max-width: 1199px) {
+  .diploma__img img {
+    /* object-position: right; */
+    /* object-position: 25% 50%; */
+  }
+  .advantages-page .advantages .advantages__container {
+    padding: 50px 20px;
+  }
+  .more-info .more-info__container {
+    grid-template-columns: 1fr;
+  }
+  .more-info .image img:first-child {
+    display: none;
+  }
+  .more-info .image img:last-child {
+    display: block;
+  }
+  .more-info .info {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .diploma__left {
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+  }
+  .diploma img {
+    -o-object-position: calc(-280px + 90 * (100vw - 620px) / 147) 50%;
+    object-position: calc(-280px + 90 * (100vw - 620px) / 147) 50%;
+  }
+}
+@media (max-width: 619px) {
+  .diploma .diploma__container {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0;
+  }
+  .diploma .diploma__container .red-btn {
+    margin-bottom: 0;
+  }
+  .diploma__left {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: calc(40px + -10 * (100vw - 360px) / 259);
+  }
+  .diploma .title {
+    margin-bottom: calc(10px + 5 * (100vw - 360px) / 259);
+  }
+  .diploma .line {
+    margin-bottom: calc(20px + 10 * (100vw - 360px) / 259);
+  }
+  .diploma .text {
+    margin-bottom: calc(30px + 20 * (100vw - 360px) / 259);
+  }
+  .diploma__img {
+    height: calc(200px + 212 * (100vw - 360px) / 259);
+  }
+  .diploma__img img {
+    -o-object-position: 50% 50%;
+    object-position: 50% 50%;
+  }
+  .more-info .info {
+    padding-left: calc(20px + 10 * (100vw - 360px) / 259);
+    padding-right: calc(20px + 10 * (100vw - 360px) / 259);
   }
 }
 .not-breakable-space {
