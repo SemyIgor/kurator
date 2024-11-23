@@ -3,6 +3,11 @@
    margin: 0 auto;
 }
 
+/* .center {
+   padding-left: calc(50% - 96.0rem);
+   padding-right: calc(50% - 96.0rem);
+} */
+
 /* Общий стиль для контейнера секции страницы */
 [class*=container]:not(.fancybox__container) {
    width: 100%;
@@ -50,3 +55,14 @@
 .display--flex {
    display: flex;
 }
+
+/* Вся высота страницы */
+.page-wrapper {
+   /* min-height: 100vh; */
+   /*    display: flex;
+   flex-direction: column; */
+}
+
+/* .main {
+   flex: 1 1 auto;
+} */
