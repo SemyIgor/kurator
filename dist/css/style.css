@@ -467,10 +467,6 @@ section {
   }
 }
 @media (max-width: 1199px) {
-  .diploma__img img {
-    /* object-position: right; */
-    /* object-position: 25% 50%; */
-  }
   .advantages-page .advantages .advantages__container {
     padding: 50px 20px;
   }
