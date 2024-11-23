@@ -4,9 +4,19 @@ export default function shadowBottom() {
 
     // Убедившись, что страница загружена, вызываем сообщение о cookie
     document.addEventListener("DOMContentLoaded", function () {
-        displayCookieWindow();
-        showShadow();
+        // Проверяем, нажимались ли ранее кнопки в cookie-окне
+        let accepted = localStorage.getItem("accepted");
+        console.log("accepted: ", accepted);
+        let discard = localStorage.getItem("discard");
+        console.log("discard: ", discard);
+
+        // Если нет, то показываем окно cookie
+        if (!(accepted || discard)) {
+            displayCookieWindow();
+            showShadow();
+        }
     });
+    // console.log("Утвердительно !");
 
     // Функция "включения" окна-сообщения об использовании cookie
     function displayCookieWindow() {
@@ -19,6 +29,10 @@ export default function shadowBottom() {
         // Подключаем к кнопке "Принять" событие
         acceptButton.addEventListener("click", (event) => {
             event.preventDefault();
+
+            // Запоминаем, что нажали "Принять" и сохраняем в localStorage
+            let accepted = true;
+            localStorage.setItem("accepted", accepted);
 
             // Закрываем все окна внутри shadow
             closeAllShadowChildren();
@@ -33,6 +47,10 @@ export default function shadowBottom() {
         // Подключаем к кнопке "Отказаться" событие
         discardButton.addEventListener("click", (event) => {
             event.preventDefault();
+
+            // Запоминаем, что нажали "Отказаться" и сохраняем в localStorage
+            let discard = true;
+            localStorage.setItem("discard", discard);
 
             // Закрываем все окна внутри shadow
             closeAllShadowChildren();
