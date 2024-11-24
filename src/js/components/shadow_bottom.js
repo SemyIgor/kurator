@@ -6,9 +6,7 @@ export default function shadowBottom() {
     document.addEventListener("DOMContentLoaded", function () {
         // Проверяем, нажимались ли ранее кнопки в cookie-окне
         let accepted = localStorage.getItem("accepted");
-        console.log("accepted: ", accepted);
         let discard = localStorage.getItem("discard");
-        console.log("discard: ", discard);
 
         // Если нет, то показываем окно cookie
         if (!(accepted || discard)) {

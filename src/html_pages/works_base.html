@@ -5,132 +5,16 @@
     @@include('html_parts/universals/_header.html')
 
     <main class="main center">
-        <!-- Затемнённый фон слева и его содержимое -->
         <!-- Содержит заказ звонка -->
-        <div class="shadow center">
-            <div class="shadow__container">
+        @@include('html_parts/universals/_shadow.html')
 
-                <!-- Окно заказа звонка -->
-                <div class="white-bg call-order-window shadow-child display--none">
-                    <div class="call-order-form">
-
-                        <div class="cross-close">
-                            <img src="images/main/cross_close.svg" alt="Cross Close">
-                        </div>
-
-                        <div class="title">Заказ звонка</div>
-
-                        <div class="line"></div>
-
-                        <form action="#" id="question-form" class="question-form">
-                            <label>
-                                <div class="asterisk">*</div>
-                                <input type="text" name="user-name" id="" placeholder="Введите Ваше Имя"
-                                    class="question-form__name">
-                            </label>
-                            <label>
-                                <div class="asterisk">*</div>
-                                <input type="tel" name="user-phone" id="" placeholder="+375 (XX) XXX-XX-XX"
-                                    class="question-form__phone">
-                            </label>
-                        </form>
-
-                        <div class="form-result">
-                            <p class="remark">Отправляя форму, вы соглашаетесь с<a href="#">политикой&nbsp; </a>
-                                обработки и
-                                использования
-                                персональных
-                                данных</p>
-                            <button type="submit" form="question-form" class="red-btn no-switch"><span>Задать
-                                    вопрос</span><span></span></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Окно = Заявка принята = -->
-                <!-- <div class="white-bg shadow-child display--none"> -->
-                <div class="white-bg order-accepted-window shadow-child display--none">
-                    <div class="call-order-form">
-
-                        <div class="cross-close">
-                            <img src="images/main/cross_close.svg" alt="Cross Close">
-                        </div>
-
-                        <div class="title">Заявка принята</div>
-
-                        <div class="line"></div>
-
-                        <div class="message">Мы перезвоним Вам в ближайшее время!</div>
-
-                        <div class="checkbox-order-accepted__image">
-                            <img src="images/main/order_accepted_checkbox.svg" alt="Order Accepted Checkbox">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Затемнённый фон снизу и его содержимое -->
         <!-- Содержит окно "Cookie" -->
-        <div class="shadow-bottom center">
-            <div class="shadow-bottom__container">
-                <!-- Окно предупреждения о "куки" -->
-                <div class="cookie-window shadow-child display--none">
-                    <p class="text">
-                        Мы используем файлы cookie. Вы можете <span>настроить cookie-файлы</span>
-                        и ознакомиться с нашей политикой использования cookie-файлов.
-                    </p>
-                    <div class="buttons">
-                        <button class="red-btn switch"><span>Принять</span><span>Принять</span></button>
-                        <button class="red-border-btn switch"><span>Отказаться</span>
-                            <span>Отказаться</span></button>
-                    </div>
+        @@include('html_parts/universals/_shadow_bottom.html')
 
-                </div>
-            </div>
-        </div>
-
-        <!-- Затемнённый фон сверху и его содержимое -->
         <!-- Содержит окно бургер-меню -->
-        <div class="shadow-top center">
-            <div class="shadow-top__container">
-                <!-- Окно бургер-меню -->
-                <div class="burger-window shadow-child">
+        @@include('html_parts/universals/_shadow_top.html')
 
-                    <div class="cross-close">
-                        <img src="images/main/cross_close.svg" alt="Cross Close">
-                    </div>
 
-                    <div class="logo">
-                        <a href="#"><img src="images/main/header/logo.svg" alt="Header Logo"></a>
-                    </div>
-
-                    @@include('html_parts/universals/_socials.html')
-
-                    @@include('html_parts/universals/_nav_burger.html')
-
-                    <div class="line-top"></div>
-
-                    @@include('html_parts/universals/_contacts.html')
-
-                    <div class="line-bottom"></div>
-
-                    <div class="clock">
-                        <div class="clock-img">
-                            <img src="images/main/header/clock.svg" alt="Clock">
-                        </div>
-                        <div class="clock-text">
-                            <span>контакт-центр</span>
-                        </div>
-                        <div class="clock-time">
-                            <span>с 8:00 до 22:00</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
         @@include('html_parts/universals/_nav.html')
 
     </main>
