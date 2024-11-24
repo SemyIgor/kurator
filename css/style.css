@@ -260,6 +260,7 @@ section {
   --padding-60-30: 60px;
   --padding-40-30: 40px;
   /* Шрифты */
+  --font-size-52-26: 52px;
   --font-size-52-24: 52px;
   --font-size-48-32: 48px;
   --font-size-48-28: 48px;
@@ -285,6 +286,7 @@ section {
 /* Responsive */
 @media (max-width: 1919px) {
   :root {
+    --font-size-52-26: calc(26px + (52 - 26) * ((100vw - 360px) / (1919 - 360)));
     --font-size-52-24: calc(24px + (52 - 24) * ((100vw - 360px) / (1919 - 360)));
     --font-size-48-32: calc(32px + (48 - 32) * ((100vw - 360px) / (1919 - 360)));
     --font-size-48-28: calc(28px + (48 - 28) * ((100vw - 360px) / (1919 - 360)));
@@ -712,6 +714,201 @@ section {
 @media (max-width: 429px) {
   .china-scroll .chin-lang {
     background-size: 255% 126%;
+  }
+}
+.database .base-items {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  row-gap: 60px;
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
+  column-gap: 30px;
+  margin-bottom: 100px;
+}
+.database .grid-line {
+  position: absolute;
+  top: 0px;
+  bottom: 30px;
+  width: 2px;
+  background-color: var(--color-card-bg);
+  z-index: 1;
+}
+.database .grid-line__column--1 {
+  left: calc(25% - 9px);
+}
+.database .grid-line__column--2 {
+  left: calc(50% - 2px);
+}
+.database .grid-line__column--3 {
+  left: calc(75% + 6px);
+}
+.database .grid-line__column--4 {
+  display: none;
+}
+.database .base-item {
+  position: relative;
+  border-bottom: 2px solid var(--color-card-bg);
+}
+.database .title {
+  font-size: var(--font-size-52-26);
+  font-weight: 700;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: var(--color-black-text);
+  max-width: 548px;
+  margin-top: var(--margin-60-30);
+  margin-bottom: var(--margin-15-10);
+}
+.database .line {
+  border: 1px solid var(--color-decorated-text);
+  width: 150px;
+  height: 3px;
+  background-color: var(--color-decorated-text);
+  margin-bottom: var(--margin-40-30);
+}
+.database .partition {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-bottom: 13px;
+  border-radius: 53px;
+  padding: 2px 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 26px;
+  background-color: var(--color-form-bg);
+  font-size: var(--font-size-16-14);
+  font-weight: 500;
+  text-align: center;
+  color: var(--color-white-text);
+}
+.database .work-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-bottom: 15px;
+  border-radius: 53px;
+  padding: 2px 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 26px;
+  background-color: var(--color-decorated-text);
+  font-size: var(--font-size-16-14);
+  font-weight: 500;
+  text-align: center;
+  color: var(--color-white-text);
+}
+.database .work-title {
+  font-size: var(--font-size-16-14);
+  font-weight: 700;
+  color: var(--color-black-text);
+  max-width: 443px;
+  margin-bottom: 27px;
+}
+.database .download__btn {
+  font-size: var(--font-size-20-16);
+  font-weight: 500;
+  text-align: center;
+  color: var(--color-red-text);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 5px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1919px) {
+  .database .base-items {
+    margin-bottom: calc(30px + 70 * (100vw - 360px) / 1559);
+  }
+  .database .base-items {
+    row-gap: calc(20px + 40 * (100vw - 360px) / 1559);
+  }
+}
+@media (max-width: 1549px) {
+  .database .grid-line__column--1 {
+    left: calc(33.333% - 6px);
+  }
+  .database .grid-line__column--2 {
+    left: calc(66.666% + 3px);
+  }
+  .database .grid-line__column--3 {
+    display: none;
+  }
+}
+@media (max-width: 1169px) {
+  .database .grid-line__column--1 {
+    left: 50%;
+  }
+  .database .grid-line__column--2 {
+    display: none;
+  }
+}
+@media (max-width: 789px) {
+  .database .grid-line__column--1 {
+    display: none;
+  }
+  .database .partition,
+  .database .work-type {
+    width: 320px;
+  }
+  .database .work-title {
+    max-width: none;
+  }
+}
+@media (max-width: 619px) {
+  .database .database__container {
+    padding-left: calc(20px + 10 * (100vw - 360px) / 259);
+    padding-right: calc(20px + 10 * (100vw - 360px) / 259);
+  }
+  .database .work-title {
+    max-width: calc(320px + 240 * (100vw - 360px) / 259);
+    margin-bottom: calc(15px + 12 * (100vw - 360px) / 259);
+  }
+  .database .partition {
+    margin-bottom: calc(7px + 6 * (100vw - 360px) / 259);
+  }
+  .database .work-type {
+    margin-bottom: calc(10px + 5 * (100vw - 360px) / 259);
+  }
+  .database .download__btn {
+    margin-bottom: calc(10px + 20 * (100vw - 360px) / 259);
   }
 }
 .not-breakable-space {
@@ -2115,8 +2312,6 @@ section {
 /* --------------------- */
 .footer {
   background-color: var(--color-black-bg);
-  /* margin: 0 auto;
-  width: 100%; */
 }
 .footer .footer__container {
   width: 100%;
@@ -2127,7 +2322,6 @@ section {
   display: grid;
   grid-template-columns: calc(25% + 20px) 1fr 1fr 1fr;
   margin-bottom: 12px;
-  /* column-gap: 30px; */
   /* Первая колонка */
   /* Вторая, третья и четвёртая колонка */
   /* Прячем "хвост", который появится позже для имитации объединения колонок  */
@@ -2214,14 +2408,15 @@ section {
   -webkit-transform: translateX(-85px);
   -ms-transform: translateX(-85px);
   transform: translateX(-85px);
-  /*                 &:hover {
-      pointer-events: none;
-  } */
 }
 
 @media (max-width: 1199px) {
   .footer__grid {
     grid-template-columns: 300px 1fr 1fr 1fr;
+  }
+  .footer .footer__container {
+    padding-top: calc(30px + 30 * (100vw - 360px) / 839);
+    padding-bottom: calc(15px + 15 * (100vw - 360px) / 839);
   }
 }
 @media (max-width: 950px) {
