@@ -2976,9 +2976,6 @@ section {
   padding-left: 16px;
   padding-right: 16px;
 }
-.header-nav ul li:not(:first-child):hover a {
-  color: var(--color-red-text);
-}
 .header-nav ul li a {
   text-transform: uppercase;
   text-align: center;
@@ -2986,16 +2983,109 @@ section {
   font-weight: 600;
   color: var(--color-black-text);
 }
-.header-nav ul li:first-child {
+
+/* === Отключаем hover в пункте меню nav текущей страницы ===  */
+.main-page .header-nav ul li:not(.main-page):hover a {
+  color: var(--color-red-text);
+}
+
+.china_lang-page .header-nav ul li:not(.china_lang-page):hover a {
+  color: var(--color-red-text);
+}
+
+.works_base-page .header-nav ul li:not(.works_base-page):hover a {
+  color: var(--color-red-text);
+}
+
+.advantages-page .header-nav ul li:not(.advantages-page):hover a {
+  color: var(--color-red-text);
+}
+
+.pub_contract-page .header-nav ul li:not(.pub_contract-page):hover a {
+  color: var(--color-red-text);
+}
+
+.payments-page .header-nav ul li:not(.payments-page):hover a {
+  color: var(--color-red-text);
+}
+
+.contacts-page .header-nav ul li:not(.contacts-page):hover a {
+  color: var(--color-red-text);
+}
+
+/* --- / Отключаем hover в пункте меню nav текущей страницы ---  */
+/* === Закрашиваем красным пункт меню nav текущей страницы ===  */
+.main-page .header-nav ul li.main-page {
   background-color: var(--color-red-bg);
 }
-.header-nav ul li:first-child:hover a {
+.main-page .header-nav ul li.main-page:hover a {
   opacity: 0.7;
 }
-.header-nav ul li:first-child a {
+.main-page .header-nav ul li.main-page a {
   color: var(--color-white-text);
 }
 
+.china_lang-page .header-nav ul li.china_lang-page {
+  background-color: var(--color-red-bg);
+}
+.china_lang-page .header-nav ul li.china_lang-page:hover a {
+  opacity: 0.7;
+}
+.china_lang-page .header-nav ul li.china_lang-page a {
+  color: var(--color-white-text);
+}
+
+.works_base-page .header-nav ul li.works_base-page {
+  background-color: var(--color-red-bg);
+}
+.works_base-page .header-nav ul li.works_base-page:hover a {
+  opacity: 0.7;
+}
+.works_base-page .header-nav ul li.works_base-page a {
+  color: var(--color-white-text);
+}
+
+.advantages-page .header-nav ul li.advantages-page {
+  background-color: var(--color-red-bg);
+}
+.advantages-page .header-nav ul li.advantages-page:hover a {
+  opacity: 0.7;
+}
+.advantages-page .header-nav ul li.advantages-page a {
+  color: var(--color-white-text);
+}
+
+.pub_contract-page .header-nav ul li.pub_contract-page {
+  background-color: var(--color-red-bg);
+}
+.pub_contract-page .header-nav ul li.pub_contract-page:hover a {
+  opacity: 0.7;
+}
+.pub_contract-page .header-nav ul li.pub_contract-page a {
+  color: var(--color-white-text);
+}
+
+.payments-page .header-nav ul li.payments-page {
+  background-color: var(--color-red-bg);
+}
+.payments-page .header-nav ul li.payments-page:hover a {
+  opacity: 0.7;
+}
+.payments-page .header-nav ul li.payments-page a {
+  color: var(--color-white-text);
+}
+
+.contacts-page .header-nav ul li.contacts-page {
+  background-color: var(--color-red-bg);
+}
+.contacts-page .header-nav ul li.contacts-page:hover a {
+  opacity: 0.7;
+}
+.contacts-page .header-nav ul li.contacts-page a {
+  color: var(--color-white-text);
+}
+
+/* --- / Закрашиваем красным пункт меню nav текущей страницы ---  */
 @media (max-width: 1543px) {
   .header-nav ul {
     gap: calc(0px + 28 * (100vw - 1200px) / 343);
