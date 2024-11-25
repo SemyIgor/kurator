@@ -123,6 +123,9 @@
         width: fit-content;
         margin-bottom: 30px;
 
+        &:hover {
+            opacity: .7;
+        }
     }
 }
 
