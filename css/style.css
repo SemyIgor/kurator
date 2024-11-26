@@ -255,6 +255,7 @@ section {
   --margin-80-30: 80px;
   --margin-60-30: 60px;
   --margin-40-30: 40px;
+  --margin-40-25: 40px;
   --margin-30-20: 30px;
   --margin-30-15: 30px;
   --margin-28-24: 28px;
@@ -332,6 +333,7 @@ section {
     --margin-80-30: calc(30px + (80 - 30) * ((100vw - 360px) / (1919 - 360)));
     --margin-60-30: calc(30px + (60 - 30) * ((100vw - 360px) / (1919 - 360)));
     --margin-40-30: calc(30px + (40 - 30) * ((100vw - 360px) / (1919 - 360)));
+    --margin-40-25: calc(25px + (40 - 25) * ((100vw - 360px) / (1919 - 360)));
     --margin-30-20: calc(20px + (30 - 20) * ((100vw - 360px) / (1919 - 360)));
     --margin-30-15: calc(15px + (30 - 15) * ((100vw - 360px) / (1919 - 360)));
     --margin-28-24: calc(24px + (28 - 24) * ((100vw - 360px) / (1919 - 360)));
@@ -3467,6 +3469,7 @@ section {
     right: 0;
   }
 }
+/* Только Тень */
 .shadow {
   position: fixed;
   -webkit-transform: translateX(-100%);
@@ -3482,8 +3485,6 @@ section {
   transition: background-color 0.5s, -webkit-transform 0.5s;
   transition: transform 0.5s, background-color 0.5s;
   transition: transform 0.5s, background-color 0.5s, -webkit-transform 0.5s;
-  /* Дополнительный экран для прозрачного фонового изображения */
-  /* Отодвигаем его за псевдоэлемент с фоновым изображением */
 }
 .shadow .shadow__container {
   padding-left: 0;
@@ -3494,6 +3495,12 @@ section {
   -ms-transform: translateX(0);
   transform: translateX(0);
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Окна внутри тени */
+.shadow {
+  /* Дополнительный экран для прозрачного фонового изображения */
+  /* Отодвигаем его за псевдоэлемент с фоновым изображением */
 }
 .shadow .white-bg {
   width: -webkit-fit-content;
@@ -3880,5 +3887,296 @@ section {
   .shadow-bottom .red-border-btn {
     width: calc(140px + 110 * (100vw - 360px) / 407);
     justify-self: flex-start;
+  }
+}
+.shadow-fade {
+  position: fixed;
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 100;
+  -webkit-transition: background-color 0.5s, -webkit-transform 0.5s;
+  transition: background-color 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s, background-color 0.5s;
+  transition: transform 0.5s, background-color 0.5s, -webkit-transform 0.5s;
+}
+.shadow-fade .shadow__container {
+  padding-left: 0;
+  padding-right: 0;
+}
+.shadow-fade--shown {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.shadow-fade .shadow-fade__container {
+  background-color: var(--color-form-bg);
+  padding-top: 60px;
+  padding-bottom: 45px;
+  padding-left: 60px;
+  padding-right: 60px;
+  width: 85%;
+  border-radius: 15px;
+  -webkit-transform: translateY(193px);
+  -ms-transform: translateY(193px);
+  transform: translateY(193px);
+}
+.shadow-fade .shadow-fade__container .work-order-window {
+  position: relative;
+}
+.shadow-fade .shadow-fade__container .work-order-window .cross-close {
+  position: absolute;
+  right: 0px;
+  top: -30px;
+  display: none;
+}
+.shadow-fade .title {
+  font-size: var(--font-size-48-28);
+  font-weight: 700;
+  color: var(--color-white-text);
+  margin-bottom: 8px;
+}
+.shadow-fade .line {
+  border: 2px solid var(--color-decorated-text);
+  width: 150px;
+  height: 0px;
+  margin-bottom: var(--margin-40-25);
+}
+.shadow-fade .request-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-rows: auto auto auto auto auto; */
+  gap: 30px;
+  margin-bottom: 15px;
+  /* Позиционируем asterisk относительно label */
+  /* Абсолютное позиционирование asterisk-а */
+  /* Если внутри label-а input в фокусе, то asterisk скрываем */
+}
+.shadow-fade .request-form label {
+  position: relative;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+.shadow-fade .request-form label span {
+  display: inline-block;
+}
+.shadow-fade .request-form label span:not(span span) {
+  font-size: var(--font-size-20-16);
+  font-weight: 500;
+  color: var(--color-black-text);
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+.shadow-fade .request-form label .form-checkmark {
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+  z-index: 10;
+  pointer-events: none;
+}
+.shadow-fade .request-form .asterisk {
+  color: var(--color-red-text);
+}
+.shadow-fade .request-form label:has(input:focus) .asterisk {
+  display: none;
+}
+.shadow-fade .request-form input, .shadow-fade .request-form textarea {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-black-text);
+}
+.shadow-fade .request-form input::-webkit-input-placeholder, .shadow-fade .request-form textarea::-webkit-input-placeholder {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-text);
+}
+.shadow-fade .request-form input::-moz-placeholder, .shadow-fade .request-form textarea::-moz-placeholder {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-text);
+}
+.shadow-fade .request-form input:-ms-input-placeholder, .shadow-fade .request-form textarea:-ms-input-placeholder {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-text);
+}
+.shadow-fade .request-form input::-ms-input-placeholder, .shadow-fade .request-form textarea::-ms-input-placeholder {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-text);
+}
+.shadow-fade .request-form input::placeholder, .shadow-fade .request-form textarea::placeholder {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-text);
+}
+.shadow-fade .request-form input:focus::-webkit-input-placeholder, .shadow-fade .request-form textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+.shadow-fade .request-form input:focus::-moz-placeholder, .shadow-fade .request-form textarea:focus::-moz-placeholder {
+  color: transparent;
+}
+.shadow-fade .request-form input:focus:-ms-input-placeholder, .shadow-fade .request-form textarea:focus:-ms-input-placeholder {
+  color: transparent;
+}
+.shadow-fade .request-form input:focus::-ms-input-placeholder, .shadow-fade .request-form textarea:focus::-ms-input-placeholder {
+  color: transparent;
+}
+.shadow-fade .request-form input:focus::placeholder, .shadow-fade .request-form textarea:focus::placeholder {
+  color: transparent;
+}
+.shadow-fade .request-form textarea {
+  padding-top: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.shadow-fade .request-form .textarea {
+  grid-column: 1/4;
+}
+.shadow-fade .request-form__type, .shadow-fade .request-form__theme, .shadow-fade .request-form__subject, .shadow-fade .request-form__comment, .shadow-fade .request-form__name, .shadow-fade .request-form__phone, .shadow-fade .request-form__email {
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+}
+.shadow-fade .request-form .red-border-btn {
+  gap: 10px;
+  border: 2px solid var(--color-black-btn-bg);
+  margin-top: 10px;
+}
+.shadow-fade .request-form .red-border-btn span {
+  color: var(--color-white-text);
+}
+.shadow-fade .request-form .red-border-btn img {
+  display: inline-block !important;
+}
+.shadow-fade .request-form .red-btn {
+  grid-column: 3/4;
+  justify-self: end;
+  margin-top: 10px;
+}
+.shadow-fade .form-result {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.shadow-fade .remark {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-white-text);
+  justify-self: end;
+}
+.shadow-fade .remark a {
+  color: #307ecc;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media (max-width: 1919px) {
+  .shadow-fade .shadow-fade__container {
+    padding-left: calc(30px + 30 * (100vw - 1000px) / 919);
+    padding-right: calc(30px + 30 * (100vw - 1000px) / 919);
+    padding-top: calc(50px + 10 * (100vw - 1000px) / 919);
+    padding-bottom: calc(30px + 15 * (100vw - 1000px) / 919);
+    -webkit-transform: translateY(calc(109px + 84 * (100vw - 360px) / 1559));
+    -ms-transform: translateY(calc(109px + 84 * (100vw - 360px) / 1559));
+    transform: translateY(calc(109px + 84 * (100vw - 360px) / 1559));
+  }
+  .shadow-fade .request-form {
+    gap: calc(20px + 10 * (100vw - 850px) / 1069);
+  }
+}
+@media (max-width: 999px) {
+  .shadow-fade .shadow-fade__container {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (max-width: 849px) {
+  .shadow-fade .shadow-fade__container .work-order-window .cross-close {
+    display: block;
+  }
+  .shadow-fade .request-form {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .shadow-fade .request-form label .form-checkmark {
+    bottom: 14px;
+  }
+  .shadow-fade .request-form .textarea {
+    grid-column: 1/2;
+  }
+  .shadow-fade .request-form .red-btn {
+    grid-column: 1/2;
+    justify-self: start;
+  }
+  .shadow-fade .request-form input {
+    height: 40px;
+  }
+  .shadow-fade .request-form textarea {
+    height: 40px;
+  }
+  .shadow-fade .request-form .red-btn {
+    margin-top: 0;
+  }
+  .shadow-fade .request-form .red-border-btn {
+    margin-top: 20px;
+  }
+  .shadow-fade .form-result .remark {
+    font-size: calc(12px + 2 * (100vw - 360px) / 489);
+    color: var(--color-black-text);
+  }
+}
+@media (max-width: 619px) {
+  .shadow-fade .shadow-fade__container {
+    padding-left: calc(20px + 10 * (100vw - 360px) / 259);
+    padding-right: calc(20px + 10 * (100vw - 360px) / 259);
+  }
+  .shadow-fade .request-form {
+    margin-bottom: calc(20px + -5 * (100vw - 360px) / 259);
+  }
+  .shadow-fade .request-form .red-border-btn {
+    width: calc(192px + 58 * (100vw - 360px) / 259);
+    justify-self: center;
+  }
+  .shadow-fade .request-form .red-btn {
+    width: calc(192px + 58 * (100vw - 360px) / 259);
+    justify-self: center;
   }
 }
