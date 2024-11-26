@@ -5,24 +5,8 @@ export default function shadow() {
     // Находим тёмное окно
     const shadowBg = document.querySelector(".shadow");
 
-    // Находим кнопки "Заказать [+ ...]"
-    const toOrderButtons = document.querySelectorAll(".red-btn");
-
     // Находим кнопки "Заказать звонок" (на перспективу, вдруг будет не одна)
     const callMeButtons = document.querySelectorAll(".call-me-btn");
-
-    // Модуль обработки нажатия кнопок "Заказать работу"
-    // if (toOrderButtons.length > 0) {
-    //     // Подключаем к кнопкам "Заказать" событие 'click' и вызываем функцию для его обработки
-    //     toOrderButtons.forEach((button) => {
-    //         if (button.textContent.includes("Заказать")) {
-    //             button.addEventListener("click", (event) => {
-    //                 event.preventDefault();
-    //                 showToOrderCallWindow();
-    //             });
-    //         }
-    //     });
-    // }
 
     // === Модуль работы с окном заказа звонка ========================
 
