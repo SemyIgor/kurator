@@ -43,7 +43,6 @@
             position: absolute;
             right: 20px;
             top: 20px;
-            display: none;
         }
     }
 
@@ -84,7 +83,7 @@
                 font-weight: 500;
                 color: var(--color-black-text);
                 margin-left: 20px;
-                margin-bottom: 5px;
+                /* margin-bottom: 5px; */
             }
 
             & .form-checkmark {
@@ -99,7 +98,6 @@
         /* Абсолютное позиционирование asterisk-а */
         & .asterisk {
             color: var(--color-red-text);
-
         }
 
         /* Если внутри label-а input в фокусе, то asterisk скрываем */
@@ -175,12 +173,12 @@
         }
     }
 
-    .form-result {
+    & .form-result {
         display: grid;
         grid-template-columns: 1fr;
     }
 
-    .remark {
+    & .remark {
         font-size: 14px;
         font-weight: 400;
         color: var(--color-white-text);
@@ -199,7 +197,7 @@
         & .shadow-fade__container {}
 
         & .work-order-window {
-            margin-top: calc(109px + (193 - 109) * ((100vw - 360px) / (1919 - 360)));
+            margin-top: calc(0px + (193 - 0) * ((100vw - 360px) / (1919 - 360)));
             padding-left: calc(30px + (60 - 30) * ((100vw - 1000px) / (1919 - 1000)));
             padding-right: calc(30px + (60 - 30) * ((100vw - 1000px) / (1919 - 1000)));
             padding-top: calc(50px + (60 - 50) * ((100vw - 1000px) / (1919 - 1000)));
@@ -231,16 +229,12 @@
 
         & .work-order-window {
             width: 100%;
-
-            & .cross-close {
-                display: block;
-            }
         }
 
 
         & .request-form {
             grid-template-columns: 1fr;
-            gap: 10px;
+            gap: 5px;
 
             & label {
                 & .form-checkmark {
@@ -275,7 +269,7 @@
         }
 
         & .form-result {
-            .remark {
+            & .remark {
                 font-size: calc(12px + (14 - 12) * ((100vw - 360px) / (849 - 360)));
                 color: var(--color-black-text);
             }

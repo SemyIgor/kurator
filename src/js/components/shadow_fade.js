@@ -2,8 +2,11 @@ export default function shadowFade() {
     // Находим Затухающую Тень
     const shadowFadeBg = document.querySelector(".shadow-fade");
 
-    // Находим кнопки "Заказать [+ ...]"
-    const toOrderButtons = document.querySelectorAll(".red-btn");
+    // Находим кнопки "Заказать [+ ...]" и первую закладку в nav ("ЗАКАЗАТЬ РАБОТУ")
+    const toOrderButtons = document.querySelectorAll(
+        ".red-btn, .header-nav ul li.main-page"
+    );
+    console.log("toOrderButtons: ", toOrderButtons);
 
     // Модуль обработки нажатия кнопок "Заказать работу"
     if (toOrderButtons.length > 0) {

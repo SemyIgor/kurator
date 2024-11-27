@@ -1735,7 +1735,7 @@ section {
   height: 0px;
   margin-bottom: 30px;
 }
-.question .question-form {
+.question .request-form {
   display: grid;
   grid-template-columns: 250px 250px 1fr;
   gap: 30px;
@@ -1744,10 +1744,10 @@ section {
   /* Абсолютное позиционирование asterisk-а */
   /* Если внутри label-а input в фокусе, то asterisk скрываем */
 }
-.question .question-form label {
+.question .request-form label {
   position: relative;
 }
-.question .question-form .asterisk {
+.question .request-form .asterisk {
   position: absolute;
   top: 10px;
   left: 170px;
@@ -1755,10 +1755,10 @@ section {
   color: var(--color-red-text);
   font-size: 16px;
 }
-.question .question-form label:has(input:focus) .asterisk {
+.question .request-form label:has(input:focus) .asterisk {
   display: none;
 }
-.question .question-form input, .question .question-form textarea {
+.question .request-form input, .question .request-form textarea {
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
@@ -1767,7 +1767,7 @@ section {
   font-weight: 400;
   color: var(--color-black-text);
 }
-.question .question-form input::-webkit-input-placeholder, .question .question-form textarea::-webkit-input-placeholder {
+.question .request-form input::-webkit-input-placeholder, .question .request-form textarea::-webkit-input-placeholder {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -1776,7 +1776,7 @@ section {
   font-weight: 400;
   color: var(--color-gray-text);
 }
-.question .question-form input::-moz-placeholder, .question .question-form textarea::-moz-placeholder {
+.question .request-form input::-moz-placeholder, .question .request-form textarea::-moz-placeholder {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -1784,16 +1784,7 @@ section {
   font-weight: 400;
   color: var(--color-gray-text);
 }
-.question .question-form input:-ms-input-placeholder, .question .question-form textarea:-ms-input-placeholder {
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--color-gray-text);
-}
-.question .question-form input::-ms-input-placeholder, .question .question-form textarea::-ms-input-placeholder {
+.question .request-form input:-ms-input-placeholder, .question .request-form textarea:-ms-input-placeholder {
   position: absolute;
   top: 50%;
   -ms-transform: translateY(-50%);
@@ -1802,7 +1793,16 @@ section {
   font-weight: 400;
   color: var(--color-gray-text);
 }
-.question .question-form input::placeholder, .question .question-form textarea::placeholder {
+.question .request-form input::-ms-input-placeholder, .question .request-form textarea::-ms-input-placeholder {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-text);
+}
+.question .request-form input::placeholder, .question .request-form textarea::placeholder {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -1812,22 +1812,22 @@ section {
   font-weight: 400;
   color: var(--color-gray-text);
 }
-.question .question-form input:focus::-webkit-input-placeholder, .question .question-form textarea:focus::-webkit-input-placeholder {
+.question .request-form input:focus::-webkit-input-placeholder, .question .request-form textarea:focus::-webkit-input-placeholder {
   color: transparent;
 }
-.question .question-form input:focus::-moz-placeholder, .question .question-form textarea:focus::-moz-placeholder {
+.question .request-form input:focus::-moz-placeholder, .question .request-form textarea:focus::-moz-placeholder {
   color: transparent;
 }
-.question .question-form input:focus:-ms-input-placeholder, .question .question-form textarea:focus:-ms-input-placeholder {
+.question .request-form input:focus:-ms-input-placeholder, .question .request-form textarea:focus:-ms-input-placeholder {
   color: transparent;
 }
-.question .question-form input:focus::-ms-input-placeholder, .question .question-form textarea:focus::-ms-input-placeholder {
+.question .request-form input:focus::-ms-input-placeholder, .question .request-form textarea:focus::-ms-input-placeholder {
   color: transparent;
 }
-.question .question-form input:focus::placeholder, .question .question-form textarea:focus::placeholder {
+.question .request-form input:focus::placeholder, .question .request-form textarea:focus::placeholder {
   color: transparent;
 }
-.question .question-form textarea {
+.question .request-form textarea {
   padding-top: 14px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1836,7 +1836,7 @@ section {
   -ms-flex-align: center;
   align-items: center;
 }
-.question .question-form__name, .question .question-form__phone, .question .question-form__question {
+.question .request-form__name, .question .request-form__phone, .question .request-form__question {
   width: 100%;
   height: 50px;
   border-radius: 8px;
@@ -2073,11 +2073,6 @@ section {
   }
 }
 @media (max-width: 999px) {
-  .do-now {
-    /*         & .buttons {
-        gap: calc(10px + (30 - 10) * ((100vw - 850px) / (999 - 850)));
-    } */
-  }
   .do-now .do-now__container {
     padding-left: 30px;
     padding-right: 30px;
@@ -2091,19 +2086,17 @@ section {
   }
 }
 @media (max-width: 849px) {
-  .do-now {
-    /*         & .buttons {
-        grid-template-columns: 1fr;
-        gap: 10px;
-        margin-bottom: 40px;
-    } */
-  }
   .do-now .do-now__container {
     padding-top: 30px;
   }
   .do-now .info {
     padding-top: 0px;
     /* padding-bottom: 30px; */
+  }
+  .do-now .buttons {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 40px;
   }
 }
 @media (max-width: 772px) {
@@ -2261,19 +2254,19 @@ section {
   }
 }
 @media (max-width: 992px) {
-  .question .question-form {
+  .question .request-form {
     grid-template-columns: 250px 250px 1fr;
     grid-template-rows: auto auto;
   }
-  .question .question-form label:first-child {
+  .question .request-form label:first-child {
     grid-column: 1/2;
     grid-row: 1/2;
   }
-  .question .question-form label:last-child {
+  .question .request-form label:last-child {
     grid-column: 2/3;
     grid-row: 1/2;
   }
-  .question .question-form textarea {
+  .question .request-form textarea {
     grid-column: 1/4;
     grid-row: 2/3;
   }
@@ -2289,65 +2282,65 @@ section {
   .question .line {
     margin-bottom: calc(20px + 10 * (100vw - 360px) / 407);
   }
-  .question .question-form {
+  .question .request-form {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     gap: 10px;
     margin-bottom: 10px;
   }
-  .question .question-form label:first-child {
+  .question .request-form label:first-child {
     grid-column: 1/2;
     grid-row: 1/2;
     width: 320px;
   }
-  .question .question-form label:last-of-type {
+  .question .request-form label:last-of-type {
     grid-column: 1/2;
     grid-row: 2/3;
     width: 320px;
   }
-  .question .question-form .asterisk {
+  .question .request-form .asterisk {
     left: calc(151px + 19 * (100vw - 360px) / 407);
     top: calc(6px + 4 * (100vw - 360px) / 407);
   }
-  .question .question-form textarea {
+  .question .request-form textarea {
     grid-column: 1/2;
     grid-row: 3/4;
     padding-top: calc(10px + 4 * (100vw - 360px) / 407);
   }
-  .question .question-form input, .question .question-form textarea {
+  .question .request-form input, .question .request-form textarea {
     font-size: calc(14px + 2 * (100vw - 360px) / 407);
   }
-  .question .question-form input::-webkit-input-placeholder, .question .question-form textarea::-webkit-input-placeholder {
+  .question .request-form input::-webkit-input-placeholder, .question .request-form textarea::-webkit-input-placeholder {
     font-size: calc(14px + 2 * (100vw - 360px) / 407);
   }
-  .question .question-form input::-moz-placeholder, .question .question-form textarea::-moz-placeholder {
+  .question .request-form input::-moz-placeholder, .question .request-form textarea::-moz-placeholder {
     font-size: calc(14px + 2 * (100vw - 360px) / 407);
   }
-  .question .question-form input:-ms-input-placeholder, .question .question-form textarea:-ms-input-placeholder {
+  .question .request-form input:-ms-input-placeholder, .question .request-form textarea:-ms-input-placeholder {
     font-size: calc(14px + 2 * (100vw - 360px) / 407);
   }
-  .question .question-form input::-ms-input-placeholder, .question .question-form textarea::-ms-input-placeholder {
+  .question .request-form input::-ms-input-placeholder, .question .request-form textarea::-ms-input-placeholder {
     font-size: calc(14px + 2 * (100vw - 360px) / 407);
   }
-  .question .question-form input::placeholder, .question .question-form textarea::placeholder {
+  .question .request-form input::placeholder, .question .request-form textarea::placeholder {
     font-size: calc(14px + 2 * (100vw - 360px) / 407);
   }
-  .question .question-form input:focus::-webkit-input-placeholder, .question .question-form textarea:focus::-webkit-input-placeholder {
+  .question .request-form input:focus::-webkit-input-placeholder, .question .request-form textarea:focus::-webkit-input-placeholder {
     color: transparent;
   }
-  .question .question-form input:focus::-moz-placeholder, .question .question-form textarea:focus::-moz-placeholder {
+  .question .request-form input:focus::-moz-placeholder, .question .request-form textarea:focus::-moz-placeholder {
     color: transparent;
   }
-  .question .question-form input:focus:-ms-input-placeholder, .question .question-form textarea:focus:-ms-input-placeholder {
+  .question .request-form input:focus:-ms-input-placeholder, .question .request-form textarea:focus:-ms-input-placeholder {
     color: transparent;
   }
-  .question .question-form input:focus::-ms-input-placeholder, .question .question-form textarea:focus::-ms-input-placeholder {
+  .question .request-form input:focus::-ms-input-placeholder, .question .request-form textarea:focus::-ms-input-placeholder {
     color: transparent;
   }
-  .question .question-form input:focus::placeholder, .question .question-form textarea:focus::placeholder {
+  .question .request-form input:focus::placeholder, .question .request-form textarea:focus::placeholder {
     color: transparent;
   }
-  .question .question-form__name, .question .question-form__phone, .question .question-form__question {
+  .question .request-form__name, .question .request-form__phone, .question .request-form__question {
     height: calc(40px + 10 * (100vw - 360px) / 407);
   }
   .question .form-result {
@@ -3000,100 +2993,85 @@ section {
   color: var(--color-red-text);
 }
 
-.china_lang-page .header-nav ul li:not(.china_lang-page):hover a {
+.china_lang-page .header-nav ul li:not(.china_lang-page):not(.main-page):hover a {
   color: var(--color-red-text);
 }
 
-.works_base-page .header-nav ul li:not(.works_base-page):hover a {
+.works_base-page .header-nav ul li:not(.works_base-page):not(.main-page):hover a {
   color: var(--color-red-text);
 }
 
-.advantages-page .header-nav ul li:not(.advantages-page):hover a {
+.advantages-page .header-nav ul li:not(.advantages-page):not(.main-page):hover a {
   color: var(--color-red-text);
 }
 
-.pub_contract-page .header-nav ul li:not(.pub_contract-page):hover a {
+.pub_contract-page .header-nav ul li:not(.pub_contract-page):not(.main-page):hover a {
   color: var(--color-red-text);
 }
 
-.payments-page .header-nav ul li:not(.payments-page):hover a {
+.payments-page .header-nav ul li:not(.payments-page):not(.main-page):hover a {
   color: var(--color-red-text);
 }
 
-.contacts-page .header-nav ul li:not(.contacts-page):hover a {
+.contacts-page .header-nav ul li:not(.contacts-page):not(.main-page):hover a {
   color: var(--color-red-text);
 }
 
 /* --- / Отключаем hover в пункте меню nav текущей страницы ---  */
 /* === Закрашиваем красным пункт меню nav текущей страницы ===  */
-.main-page .header-nav ul li.main-page {
+/* .main-page {
+    .header-nav ul li.main-page {
+        background-color: var(--color-red-bg);
+
+        &:hover a {
+            opacity: .7;
+        }
+
+        & a {
+            color: var(--color-white-text);
+        }
+    }
+} */
+/* Здесь исключаем привязку к главной странице только для первой закладки */
+.header-nav ul li.main-page {
   background-color: var(--color-red-bg);
 }
-.main-page .header-nav ul li.main-page:hover a {
+.header-nav ul li.main-page:hover a {
   opacity: 0.7;
 }
-.main-page .header-nav ul li.main-page a {
+.header-nav ul li.main-page a {
   color: var(--color-white-text);
 }
 
-.china_lang-page .header-nav ul li.china_lang-page {
-  background-color: var(--color-red-bg);
-}
-.china_lang-page .header-nav ul li.china_lang-page:hover a {
-  opacity: 0.7;
-}
 .china_lang-page .header-nav ul li.china_lang-page a {
-  color: var(--color-white-text);
+  /* background-color: var(--color-red-bg); */
+  color: var(--color-red-text);
+  /*         &:hover a {
+      opacity: .7;
+  } */
+  /*         & a {
+      color: var(--color-white-text);
+  } */
 }
 
-.works_base-page .header-nav ul li.works_base-page {
-  background-color: var(--color-red-bg);
-}
-.works_base-page .header-nav ul li.works_base-page:hover a {
-  opacity: 0.7;
-}
 .works_base-page .header-nav ul li.works_base-page a {
-  color: var(--color-white-text);
+  color: var(--color-red-text);
 }
 
-.advantages-page .header-nav ul li.advantages-page {
-  background-color: var(--color-red-bg);
-}
-.advantages-page .header-nav ul li.advantages-page:hover a {
-  opacity: 0.7;
-}
 .advantages-page .header-nav ul li.advantages-page a {
-  color: var(--color-white-text);
+  color: var(--color-red-text);
 }
 
-.pub_contract-page .header-nav ul li.pub_contract-page {
-  background-color: var(--color-red-bg);
-}
-.pub_contract-page .header-nav ul li.pub_contract-page:hover a {
-  opacity: 0.7;
-}
 .pub_contract-page .header-nav ul li.pub_contract-page a {
-  color: var(--color-white-text);
+  color: var(--color-red-text);
 }
 
-.payments-page .header-nav ul li.payments-page {
-  background-color: var(--color-red-bg);
-}
-.payments-page .header-nav ul li.payments-page:hover a {
-  opacity: 0.7;
-}
 .payments-page .header-nav ul li.payments-page a {
-  color: var(--color-white-text);
+  color: var(--color-red-text);
 }
 
-.contacts-page .header-nav ul li.contacts-page {
-  background-color: var(--color-red-bg);
-}
-.contacts-page .header-nav ul li.contacts-page:hover a {
-  opacity: 0.7;
-}
 .contacts-page .header-nav ul li.contacts-page a {
-  color: var(--color-white-text);
+  color: var(--color-red-text);
 }
 
 /* --- / Закрашиваем красным пункт меню nav текущей страницы ---  */
@@ -3946,7 +3924,6 @@ section {
   position: absolute;
   right: 20px;
   top: 20px;
-  display: none;
 }
 .shadow-fade .title {
   font-size: var(--font-size-48-28);
@@ -3983,7 +3960,7 @@ section {
   font-weight: 500;
   color: var(--color-black-text);
   margin-left: 20px;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
 }
 .shadow-fade .request-form label .form-checkmark {
   position: absolute;
@@ -4119,7 +4096,7 @@ section {
 
 @media (max-width: 1919px) {
   .shadow-fade .work-order-window {
-    margin-top: calc(109px + 84 * (100vw - 360px) / 1559);
+    margin-top: calc(0px + 193 * (100vw - 360px) / 1559);
     padding-left: calc(30px + 30 * (100vw - 1000px) / 919);
     padding-right: calc(30px + 30 * (100vw - 1000px) / 919);
     padding-top: calc(50px + 10 * (100vw - 1000px) / 919);
@@ -4138,12 +4115,9 @@ section {
   .shadow-fade .work-order-window {
     width: 100%;
   }
-  .shadow-fade .work-order-window .cross-close {
-    display: block;
-  }
   .shadow-fade .request-form {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 5px;
   }
   .shadow-fade .request-form label .form-checkmark {
     bottom: 14px;

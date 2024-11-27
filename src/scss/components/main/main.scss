@@ -364,7 +364,7 @@
 
     }
 
-    & .question-form {
+    & .request-form {
         display: grid;
         grid-template-columns: 250px 250px 1fr;
         gap: 30px;
@@ -431,12 +431,12 @@
         }
     }
 
-    .form-result {
+    & .form-result {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
-    .remark {
+    & .remark {
         font-size: 14px;
         font-weight: 400;
         color: var(--color-white-text);
@@ -448,7 +448,7 @@
         }
     }
 
-    .red-btn.no-switch {
+    & .red-btn.no-switch {
         justify-self: end;
         margin-bottom: 4px;
     }
@@ -709,10 +709,6 @@
             gap: calc(15px + (30 - 15) * ((100vw - 850px) / (999 - 850)));
         }
 
-        /*         & .buttons {
-            gap: calc(10px + (30 - 10) * ((100vw - 850px) / (999 - 850)));
-        } */
-
         & .image {
             width: calc(380px + (502 - 380) * ((100vw - 772px) / (999 - 772)));
 
@@ -734,11 +730,11 @@
             /* padding-bottom: 30px; */
         }
 
-        /*         & .buttons {
+        & .buttons {
             grid-template-columns: 1fr;
             gap: 10px;
             margin-bottom: 40px;
-        } */
+        }
     }
 }
 
@@ -817,6 +813,8 @@
         }
     }
 }
+
+
 
 
 /* Медиа-запросы для ADVANTAGES */
@@ -944,7 +942,7 @@
 @media(max-width: 992px) {
 
     .question {
-        & .question-form {
+        & .request-form {
             grid-template-columns: 250px 250px 1fr;
             grid-template-rows: auto auto;
 
@@ -979,7 +977,7 @@
             margin-bottom: calc(20px + (30 - 20) * ((100vw - 360px) / (767 - 360)));
         }
 
-        & .question-form {
+        & .request-form {
             grid-template-columns: 1fr;
             grid-template-rows: auto auto auto;
             gap: 10px;

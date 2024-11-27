@@ -44,7 +44,7 @@
 .china_lang-page {
     & .header-nav {
         & ul li {
-            &:not(.china_lang-page):hover a {
+            &:not(.china_lang-page):not(.main-page):hover a {
                 color: var(--color-red-text);
             }
         }
@@ -54,7 +54,7 @@
 .works_base-page {
     & .header-nav {
         & ul li {
-            &:not(.works_base-page):hover a {
+            &:not(.works_base-page):not(.main-page):hover a {
                 color: var(--color-red-text);
             }
         }
@@ -64,7 +64,7 @@
 .advantages-page {
     & .header-nav {
         & ul li {
-            &:not(.advantages-page):hover a {
+            &:not(.advantages-page):not(.main-page):hover a {
                 color: var(--color-red-text);
             }
         }
@@ -74,7 +74,7 @@
 .pub_contract-page {
     & .header-nav {
         & ul li {
-            &:not(.pub_contract-page):hover a {
+            &:not(.pub_contract-page):not(.main-page):hover a {
                 color: var(--color-red-text);
             }
         }
@@ -84,7 +84,7 @@
 .payments-page {
     & .header-nav {
         & ul li {
-            &:not(.payments-page):hover a {
+            &:not(.payments-page):not(.main-page):hover a {
                 color: var(--color-red-text);
             }
         }
@@ -94,7 +94,7 @@
 .contacts-page {
     & .header-nav {
         & ul li {
-            &:not(.contacts-page):hover a {
+            &:not(.contacts-page):not(.main-page):hover a {
                 color: var(--color-red-text);
             }
         }
@@ -104,7 +104,7 @@
 /* --- / Отключаем hover в пункте меню nav текущей страницы ---  */
 
 /* === Закрашиваем красным пункт меню nav текущей страницы ===  */
-.main-page {
+/* .main-page {
     .header-nav ul li.main-page {
         background-color: var(--color-red-bg);
 
@@ -116,89 +116,63 @@
             color: var(--color-white-text);
         }
     }
+} */
+
+/* Здесь исключаем привязку к главной странице только для первой закладки */
+.header-nav ul li.main-page {
+    background-color: var(--color-red-bg);
+
+    &:hover a {
+        opacity: .7;
+    }
+
+    & a {
+        color: var(--color-white-text);
+    }
 }
 
 .china_lang-page {
-    .header-nav ul li.china_lang-page {
-        background-color: var(--color-red-bg);
+    .header-nav ul li.china_lang-page a {
+        /* background-color: var(--color-red-bg); */
+        color: var(--color-red-text);
 
-        &:hover a {
+        /*         &:hover a {
             opacity: .7;
-        }
+        } */
 
-        & a {
+        /*         & a {
             color: var(--color-white-text);
-        }
+        } */
     }
 }
 
 .works_base-page {
-    .header-nav ul li.works_base-page {
-        background-color: var(--color-red-bg);
-
-        &:hover a {
-            opacity: .7;
-        }
-
-        & a {
-            color: var(--color-white-text);
-        }
+    .header-nav ul li.works_base-page a {
+        color: var(--color-red-text);
     }
 }
 
 .advantages-page {
-    .header-nav ul li.advantages-page {
-        background-color: var(--color-red-bg);
-
-        &:hover a {
-            opacity: .7;
-        }
-
-        & a {
-            color: var(--color-white-text);
-        }
+    .header-nav ul li.advantages-page a {
+        color: var(--color-red-text);
     }
 }
 
 .pub_contract-page {
-    .header-nav ul li.pub_contract-page {
-        background-color: var(--color-red-bg);
-
-        &:hover a {
-            opacity: .7;
-        }
-
-        & a {
-            color: var(--color-white-text);
-        }
+    .header-nav ul li.pub_contract-page a {
+        color: var(--color-red-text);
     }
 }
 
 .payments-page {
-    .header-nav ul li.payments-page {
-        background-color: var(--color-red-bg);
-
-        &:hover a {
-            opacity: .7;
-        }
-
-        & a {
-            color: var(--color-white-text);
-        }
+    .header-nav ul li.payments-page a {
+        color: var(--color-red-text);
     }
 }
 
 .contacts-page {
-    .header-nav ul li.contacts-page {
-        background-color: var(--color-red-bg);
-
-        &:hover a {
-            opacity: .7;
-        }
-
-        & a {
-            color: var(--color-white-text);
-        }
+    .header-nav ul li.contacts-page a {
+        color: var(--color-red-text);
     }
 }
 
