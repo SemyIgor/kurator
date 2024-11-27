@@ -9,7 +9,7 @@
     z-index: 100;
     transition: transform .5s, background-color .5s;
 
-    & .shadow__container {
+    & .shadow-fade__container {
         padding-left: 0;
         padding-right: 0;
     }
@@ -22,6 +22,12 @@
 
 .shadow-fade {
     & .shadow-fade__container {
+        height: 100%;
+    }
+
+    & .work-order-window {
+        position: relative;
+        /* transform: translateY(20%); */
         background-color: var(--color-form-bg);
         padding-top: 60px;
         padding-bottom: 45px;
@@ -29,17 +35,15 @@
         padding-right: 60px;
         width: 85%;
         border-radius: 15px;
-        transform: translateY(193px);
+        margin: 0 auto;
+        margin-top: 193px;
+        /* margin-top: -69px; */
 
-        & .work-order-window {
-            position: relative;
-
-            & .cross-close {
-                position: absolute;
-                right: 0px;
-                top: -30px;
-                display: none;
-            }
+        & .cross-close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            display: none;
         }
     }
 
@@ -192,25 +196,23 @@
 
 @media(max-width: 1919px) {
     .shadow-fade {
-        & .shadow-fade__container {
+        & .shadow-fade__container {}
+
+        & .work-order-window {
+            margin-top: calc(109px + (193 - 109) * ((100vw - 360px) / (1919 - 360)));
             padding-left: calc(30px + (60 - 30) * ((100vw - 1000px) / (1919 - 1000)));
             padding-right: calc(30px + (60 - 30) * ((100vw - 1000px) / (1919 - 1000)));
             padding-top: calc(50px + (60 - 50) * ((100vw - 1000px) / (1919 - 1000)));
             padding-bottom: calc(30px + (45 - 30) * ((100vw - 1000px) / (1919 - 1000)));
-
-            transform: translateY(calc(109px + (193 - 109) * ((100vw - 360px) / (1919 - 360))));
         }
-
-        & .request-form {
-            gap: calc(20px + (30 - 20) * ((100vw - 850px) / (1919 - 850)));
-        }
-
     }
 }
 
 @media(max-width: 999px) {
     .shadow-fade {
-        & .shadow-fade__container {
+        & .shadow-fade__container {}
+
+        & .work-order-window {
             padding-top: 50px;
             padding-bottom: 30px;
             padding-left: 30px;
@@ -225,11 +227,13 @@
 
 @media(max-width: 849px) {
     .shadow-fade {
-        & .shadow-fade__container {
-            & .work-order-window {
-                & .cross-close {
-                    display: block;
-                }
+        & .shadow-fade__container {}
+
+        & .work-order-window {
+            width: 100%;
+
+            & .cross-close {
+                display: block;
             }
         }
 
@@ -281,9 +285,12 @@
 
 @media(max-width: 619px) {
     .shadow-fade {
-        & .shadow-fade__container {
+        & .shadow-fade__container {}
+
+        & .work-order-window {
             padding-left: calc(20px + (30 - 20) * ((100vw - 360px) / (619 - 360)));
             padding-right: calc(20px + (30 - 20) * ((100vw - 360px) / (619 - 360)));
+            /* transform: translateY(5%); */
         }
 
         & .request-form {

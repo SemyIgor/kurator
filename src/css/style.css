@@ -3905,7 +3905,7 @@ section {
   transition: transform 0.5s, background-color 0.5s;
   transition: transform 0.5s, background-color 0.5s, -webkit-transform 0.5s;
 }
-.shadow-fade .shadow__container {
+.shadow-fade .shadow-fade__container {
   padding-left: 0;
   padding-right: 0;
 }
@@ -3917,6 +3917,11 @@ section {
 }
 
 .shadow-fade .shadow-fade__container {
+  height: 100%;
+}
+.shadow-fade .work-order-window {
+  position: relative;
+  /* transform: translateY(20%); */
   background-color: var(--color-form-bg);
   padding-top: 60px;
   padding-bottom: 45px;
@@ -3924,17 +3929,14 @@ section {
   padding-right: 60px;
   width: 85%;
   border-radius: 15px;
-  -webkit-transform: translateY(193px);
-  -ms-transform: translateY(193px);
-  transform: translateY(193px);
+  margin: 0 auto;
+  margin-top: 193px;
+  /* margin-top: -69px; */
 }
-.shadow-fade .shadow-fade__container .work-order-window {
-  position: relative;
-}
-.shadow-fade .shadow-fade__container .work-order-window .cross-close {
+.shadow-fade .work-order-window .cross-close {
   position: absolute;
-  right: 0px;
-  top: -30px;
+  right: 20px;
+  top: 20px;
   display: none;
 }
 .shadow-fade .title {
@@ -4107,21 +4109,16 @@ section {
 }
 
 @media (max-width: 1919px) {
-  .shadow-fade .shadow-fade__container {
+  .shadow-fade .work-order-window {
+    margin-top: calc(109px + 84 * (100vw - 360px) / 1559);
     padding-left: calc(30px + 30 * (100vw - 1000px) / 919);
     padding-right: calc(30px + 30 * (100vw - 1000px) / 919);
     padding-top: calc(50px + 10 * (100vw - 1000px) / 919);
     padding-bottom: calc(30px + 15 * (100vw - 1000px) / 919);
-    -webkit-transform: translateY(calc(109px + 84 * (100vw - 360px) / 1559));
-    -ms-transform: translateY(calc(109px + 84 * (100vw - 360px) / 1559));
-    transform: translateY(calc(109px + 84 * (100vw - 360px) / 1559));
-  }
-  .shadow-fade .request-form {
-    gap: calc(20px + 10 * (100vw - 850px) / 1069);
   }
 }
 @media (max-width: 999px) {
-  .shadow-fade .shadow-fade__container {
+  .shadow-fade .work-order-window {
     padding-top: 50px;
     padding-bottom: 30px;
     padding-left: 30px;
@@ -4129,7 +4126,10 @@ section {
   }
 }
 @media (max-width: 849px) {
-  .shadow-fade .shadow-fade__container .work-order-window .cross-close {
+  .shadow-fade .work-order-window {
+    width: 100%;
+  }
+  .shadow-fade .work-order-window .cross-close {
     display: block;
   }
   .shadow-fade .request-form {
@@ -4164,9 +4164,10 @@ section {
   }
 }
 @media (max-width: 619px) {
-  .shadow-fade .shadow-fade__container {
+  .shadow-fade .work-order-window {
     padding-left: calc(20px + 10 * (100vw - 360px) / 259);
     padding-right: calc(20px + 10 * (100vw - 360px) / 259);
+    /* transform: translateY(5%); */
   }
   .shadow-fade .request-form {
     margin-bottom: calc(20px + -5 * (100vw - 360px) / 259);
