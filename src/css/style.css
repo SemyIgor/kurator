@@ -883,6 +883,15 @@ section {
     padding-top: calc(40px + 20 * (100vw - 360px) / 407);
     padding-bottom: calc(30px + 70 * (100vw - 360px) / 407);
   }
+  .our-contacts .contacts .telegram img {
+    width: calc(24px + 16 * (100vw - 360px) / 407);
+  }
+  .our-contacts .contacts .viber img {
+    width: calc(24px + 12 * (100vw - 360px) / 407);
+  }
+  .our-contacts .contacts .phone img {
+    width: calc(26px + 15 * (100vw - 360px) / 407);
+  }
   .our-contacts .title {
     margin-bottom: calc(10px + 5 * (100vw - 360px) / 407);
   }
