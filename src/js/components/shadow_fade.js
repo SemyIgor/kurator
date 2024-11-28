@@ -21,6 +21,8 @@ export default function shadowFade() {
         });
     }
 
+    formDropDownList();
+
     // Функция "включения" окна формы заказа документа
     function displayOrderWorkWindow() {
         const orderWorkWindow =
@@ -93,5 +95,51 @@ export default function shadowFade() {
     function hideShadow() {
         shadowFadeBg.classList.remove("shadow-fade--shown");
         document.body.style.overflow = "";
+    }
+
+    // Функция обработки выпадающего списка в форме
+    function formDropDownList() {
+        // Находим элементы, содержащие выпадающие списки
+        const findDropDownLabels =
+            shadowFadeBg.querySelectorAll("label.drop-down");
+
+        if (findDropDownLabels.length > 0) {
+            findDropDownLabels.forEach((label) => {
+                // Находим поле input в каждом найденном элементе
+                const formDropDownListInput = label.querySelector("input");
+
+                // Находим выпадающий список в каждом элементе
+                const dropDownList = label.querySelector(".works-items");
+
+                // Находим элементы списка и подключаем слушатель к каждому
+                const dropDownListItems =
+                    dropDownList.querySelectorAll(".works-item");
+
+                dropDownListItems.forEach((item) => {
+                    item.addEventListener("click", (event) => {
+                        formDropDownListInput.value = event.target.textContent;
+
+                        resetDropList(label);
+                    });
+                });
+            });
+        }
+    }
+
+    function resetDropList(label) {
+        const dropDownList = label.querySelector(".works-items");
+        // Убираем список из DOM на 0.5сек
+        dropDownList.classList.remove("display--flex");
+        dropDownList.classList.add("display--none");
+        setTimeout(() => {
+            // Возвращаем список в DOM через 0.5сек
+            restoreDropList(label);
+        }, 500); // Имитация асинхронной работы
+    }
+
+    function restoreDropList(label) {
+        const dropDownList = label.querySelector(".works-items");
+        dropDownList.classList.remove("display--none");
+        dropDownList.classList.add("display--flex");
     }
 }
