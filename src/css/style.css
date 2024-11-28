@@ -4135,7 +4135,7 @@ section {
 
 @media (max-width: 1919px) {
   .shadow-fade .request-form .works-items {
-    top: calc(64px + 11 * (100vw - 360px) / 1559);
+    top: calc(60px + 15 * (100vw - 360px) / 1559);
   }
   .shadow-fade .work-order-window {
     margin-top: calc(0px + 193 * (100vw - 360px) / 1559);
