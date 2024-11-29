@@ -22,6 +22,9 @@ export default function shadowTop() {
     function displayBurgerWindow() {
         const burgerWindow = shadowTopBg.querySelector(".burger-window");
 
+        burgerWindow.classList.remove("display--none");
+        burgerWindow.classList.add("display--flex");
+
         // Обработка крестика закрытия окна
         crossToCloseWindow(burgerWindow);
     }
@@ -31,6 +34,7 @@ export default function shadowTop() {
         // Находим крестик закрытия окна и подключаем слушатель
         const crossClose = popUp.querySelector(".cross-close");
         crossClose.addEventListener("click", (event) => {
+            popUp.classList.remove("display--flex");
             popUp.classList.add("display--none");
             hideShadow();
         });
@@ -69,6 +73,8 @@ export default function shadowTop() {
         const shadowChilds = shadowTopBg.querySelectorAll(".shadow-child");
         if (shadowChilds.length > 0) {
             shadowChilds.forEach((child) => {
+                child.classList.remove("display--flex");
+                child.classList.remove("display--block");
                 child.classList.add("display--none");
             });
         }
