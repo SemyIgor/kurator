@@ -3938,7 +3938,6 @@ section {
 .shadow-fade .request-form {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /* grid-template-rows: auto auto auto auto auto; */
   gap: 30px;
   margin-bottom: 15px;
   /* Позиционируем asterisk относительно label */
@@ -3947,41 +3946,12 @@ section {
   /*         & label:has(input:focus) .asterisk {
       display: none;
   } */
-  /*         @media (hover: hover) {
-      .shadow-fade {
-          & .request-form {
-              & label.drop-down:hover .works-items {
-                  transform: scale(1);
-              }
-          }
-      }
-  } */
-  /*         @media (hover: none) {
-      .shadow-fade {
-          & .request-form {
-              & label.drop-down:active .works-items {
-                  transform: scale(1);
-              }
-          }
-      }
-  } */
-  /*         @media (hover: hover) {
-      .shadow-fade {
-          & .request-form {
-              & label.drop-down:hover img {
-                  transform: scale(-1);
-              }
-          }
-      }
-  } */
-  /*         @media (hover: none) {
-      .shadow-fade {
-          & .request-form {
-              & label.drop-down:active img {
-                  transform: scale(-1);
-              }
-          }
-      }
+  /*         & label.drop-down:hover .works-items {
+      transform: scale(1);
+  }
+
+  & label.drop-down:hover img {
+      transform: scale(-1);
   } */
 }
 .shadow-fade .request-form label {
@@ -4107,16 +4077,6 @@ section {
 .shadow-fade .request-form .red-border-btn img {
   display: inline-block !important;
 }
-.shadow-fade .request-form label.drop-down:hover .works-items {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-.shadow-fade .request-form label.drop-down:hover img {
-  -webkit-transform: scale(-1);
-  -ms-transform: scale(-1);
-  transform: scale(-1);
-}
 .shadow-fade .request-form .works-items {
   position: absolute;
   z-index: 100;
@@ -4167,6 +4127,34 @@ section {
   vertical-align: middle;
 }
 
+@media (hover: hover) {
+  .shadow-fade .request-form label.drop-down:hover .works-items {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@media (hover: none) {
+  .shadow-fade .request-form label.drop-down:active .works-items {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@media (hover: hover) {
+  .shadow-fade .request-form label.drop-down:hover img {
+    -webkit-transform: scale(-1);
+    -ms-transform: scale(-1);
+    transform: scale(-1);
+  }
+}
+@media (hover: none) {
+  .shadow-fade .request-form label.drop-down:active img {
+    -webkit-transform: scale(-1);
+    -ms-transform: scale(-1);
+    transform: scale(-1);
+  }
+}
 @media (max-width: 1919px) {
   .shadow-fade .request-form .works-items {
     top: calc(60px + 15 * (100vw - 360px) / 1559);
