@@ -3906,7 +3906,7 @@ section {
 }
 .shadow-fade .work-order-window {
   position: relative;
-  /* transform: translateY(20%); */
+  /* position: fixed; */
   background-color: var(--color-form-bg);
   padding-top: 60px;
   padding-bottom: 45px;
@@ -3946,6 +3946,42 @@ section {
   /* Если внутри label-а input в фокусе, то asterisk скрываем */
   /*         & label:has(input:focus) .asterisk {
       display: none;
+  } */
+  /*         @media (hover: hover) {
+      .shadow-fade {
+          & .request-form {
+              & label.drop-down:hover .works-items {
+                  transform: scale(1);
+              }
+          }
+      }
+  } */
+  /*         @media (hover: none) {
+      .shadow-fade {
+          & .request-form {
+              & label.drop-down:active .works-items {
+                  transform: scale(1);
+              }
+          }
+      }
+  } */
+  /*         @media (hover: hover) {
+      .shadow-fade {
+          & .request-form {
+              & label.drop-down:hover img {
+                  transform: scale(-1);
+              }
+          }
+      }
+  } */
+  /*         @media (hover: none) {
+      .shadow-fade {
+          & .request-form {
+              & label.drop-down:active img {
+                  transform: scale(-1);
+              }
+          }
+      }
   } */
 }
 .shadow-fade .request-form label {
@@ -4187,6 +4223,10 @@ section {
   }
 }
 @media (orientation: landscape) and (max-width: 800px) {
+  .shadow-fade {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
   .shadow-fade .work-order-window {
     margin-top: 0;
     padding-top: 30px;
