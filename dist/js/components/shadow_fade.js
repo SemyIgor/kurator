@@ -6,7 +6,6 @@ export default function shadowFade() {
     const toOrderButtons = document.querySelectorAll(
         ".red-btn, .header-nav ul li.main-page"
     );
-    console.log("toOrderButtons: ", toOrderButtons);
 
     // Модуль обработки нажатия кнопок "Заказать работу"
     if (toOrderButtons.length > 0) {
