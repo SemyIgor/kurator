@@ -104,6 +104,12 @@ export default function shadowFade() {
 
         if (findDropDownLabels.length > 0) {
             findDropDownLabels.forEach((label) => {
+                label.addEventListener("touchstart", (event) => {
+                    label.classList.add("hover");
+                });
+                label.addEventListener("touchend", (event) => {
+                    label.classList.remove("hover");
+                });
                 // Находим поле input в каждом найденном элементе
                 const formDropDownListInput = label.querySelector("input");
 
@@ -119,6 +125,18 @@ export default function shadowFade() {
                         formDropDownListInput.value = event.target.textContent;
 
                         resetDropList(label);
+                    });
+
+                    item.addEventListener("touchstart", (event) => {
+                        console.log("touchstart");
+                        item.classList.add("hover");
+                    });
+
+                    item.addEventListener("touchmove", (event) => {
+                        item.classList.add("hover");
+                    });
+                    item.addEventListener("touchend", (event) => {
+                        item.classList.remove("hover");
                     });
                 });
             });
